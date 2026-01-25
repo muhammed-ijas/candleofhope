@@ -11,10 +11,11 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* Project routes will be added later */}
+
+
+            {/* Project routes  */}
             {/* <Route path="/projects/community-awareness" element={<CommunityAwareness />} /> */}
             {/* <Route path="/projects/stitching-centre" element={<StitchingCentre />} /> */}
-            {/* Add more project routes */}
           </Routes>
         </main>
         <Footer />

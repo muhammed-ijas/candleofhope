@@ -1,12 +1,12 @@
 import Hero from '../components/Hero';
+import About from '../components/About';
 
 function Home() {
   return (
     <div>
       <Hero />
-      
-      {/* Other sections will be added here */}
-      {/* <About /> */}
+      <About />
+
       {/* <Vision /> */}
       {/* <AreasOfWork /> */}
       {/* <TargetAudience /> */}
