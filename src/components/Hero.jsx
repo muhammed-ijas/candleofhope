@@ -18,15 +18,24 @@ function Hero() {
   };
 
   const goToJoinUs = () => {
-    // For navigation, you'll need to implement this in your main app
-    // If using React Router: window.location.href = '/join-us';
-    // Or emit a custom event that your router can listen to
     window.location.href = '/join-us';
   };
 
   return (
-    <section className="relative h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-rose-900">
+    <section className="relative h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden">
       
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/image7.jpg" 
+          alt="Candle of Hope Background" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Black to Red Gradient Overlay */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-black via-gray-950/60 to-black"></div>
+
       {/* Animation Styles */}
       <style>{`
         @keyframes flameFloat {
@@ -76,39 +85,30 @@ function Hero() {
           <div className={`relative flex items-center justify-center order-2 lg:order-1 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
             
             {/* Decorative Circle Background */}
-            <div className="absolute w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] lg:w-[380px] lg:h-[380px] bg-gradient-to-br from-amber-400/20 to-rose-400/20 rounded-full blur-3xl opacity-60"></div>
+            <div className="absolute w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] lg:w-[380px] lg:h-[380px] bg-gradient-to-br from-red-400/20 to-red-600/20 rounded-full blur-3xl opacity-60"></div>
             
             {/* Main Image Container */}
             <div className="relative z-10 w-full max-w-[280px] sm:max-w-[360px] lg:max-w-[450px]">
               <div className="relative group">
-                
-                {/* Background Image (image2.jpg) - Behind with stroke only */}
-                <div className="absolute top-6 left-6 sm:top-8 sm:left-8 lg:top-10 lg:left-10 w-full h-full">
-                  <div className="w-full h-[280px] sm:h-[360px] lg:h-[450px] overflow-hidden shadow-xl border-4 border-red-300/60" style={{ borderRadius: '63% 37% 54% 46% / 55% 48% 52% 45%', background: 'transparent' }}>
-                  
-                  </div>
-                </div>
-
+             
                 {/* Animated Shine Border - Rotating */}
                 <div className="absolute -inset-1 shine-border">
                   <div className="w-full h-full" style={{ borderRadius: '63% 37% 54% 46% / 55% 48% 52% 45%' }}>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-300 to-transparent opacity-60" style={{ 
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-300 to-transparent opacity-60" style={{ 
                       borderRadius: '63% 37% 54% 46% / 55% 48% 52% 45%',
-                      background: 'conic-gradient(from 0deg, transparent 0%, rgba(251, 191, 36, 0.8) 10%, rgba(251, 191, 36, 1) 20%, rgba(251, 191, 36, 0.8) 30%, transparent 40%, transparent 100%)'
+                      background: 'conic-gradient(from 0deg, transparent 0%, rgba(254, 202, 202, 0.9) 10%, rgba(254, 226, 226, 1) 20%, rgba(254, 202, 202, 0.9) 30%, transparent 40%, transparent 100%)'
                     }}></div>
                   </div>
                 </div>
 
                 {/* Pulsing Glow Effect */}
-                <div className="absolute -inset-2 glow-pulse">
-                  <div className="w-full h-full bg-gradient-to-r from-amber-400/40 via-yellow-300/60 to-amber-400/40 blur-xl" style={{ borderRadius: '63% 37% 54% 46% / 55% 48% 52% 45%' }}></div>
-                </div>
+              
                 
                 {/* Main Image (image1.jpg) - Front with original shape */}
                 <div className="relative w-full h-[280px] sm:h-[360px] lg:h-[450px] overflow-hidden shadow-2xl transform transition-transform duration-700 hover:scale-105 bg-white" style={{ borderRadius: '63% 37% 54% 46% / 55% 48% 52% 45%' }}>
                   
                   <img 
-                    src="/image1.jpg" 
+                    src="/image8.jpg" 
                     alt="Candle of Hope International" 
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                   />
@@ -128,7 +128,7 @@ function Hero() {
           <div className={`text-white space-y-3 sm:space-y-4 order-1 lg:order-2 transition-all duration-1000 delay-300 relative ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
             
             {/* Subtle Background Decoration */}
-            <div className="absolute -inset-10 sm:-inset-20 bg-gradient-to-br from-amber-500/10 via-transparent to-rose-500/10 rounded-3xl blur-3xl pointer-events-none"></div>
+            <div className="absolute -inset-10 sm:-inset-20 bg-gradient-to-br from-red-500/10 via-transparent to-red-600/10 rounded-3xl blur-3xl pointer-events-none"></div>
             
             {/* Main Heading - Larger on mobile */}
             <div className="space-y-1 relative z-10">
@@ -138,16 +138,16 @@ function Hero() {
                 </span>
               </h1>
               
-              <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-semibold text-amber-50 drop-shadow-xl font-numans">
+              <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-semibold text-white drop-shadow-xl font-numans">
                 International
               </h2>
             </div>
 
             {/* Elegant Divider */}
-            <div className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-white/80 via-white/40 to-transparent"></div>
+            <div className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-red-300/80 via-red-300/40 to-transparent"></div>
 
             {/* Mission Statement - One Paragraph */}
-            <p className="text-sm sm:text-sm md:text-base leading-relaxed text-gray-100 font-light max-w-xl relative z-10">
+            <p className="text-sm sm:text-sm md:text-base leading-relaxed text-white font-light max-w-xl relative z-10">
               Empowering rural communities through transformative educational and social initiatives across East and Northeast India. We are dedicated to bringing hope, opportunity, and sustainable development to underserved regions through comprehensive community development, creating lasting change for thousands of families.
             </p>
             
