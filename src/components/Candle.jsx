@@ -1,6 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { fadeIn } from '../Varients';
+
+const fadeIn = (direction, delay) => {
+  return {
+    hidden: {
+      y: direction === 'up' ? 40 : direction === 'down' ? -40 : 0,
+      x: direction === 'left' ? 40 : direction === 'right' ? -40 : 0,
+      opacity: 0,
+    },
+    show: {
+      y: 0,
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: 'tween',
+        duration: 1.2,
+        delay: delay,
+        ease: [0.25, 0.25, 0.25, 0.75],
+      },
+    },
+  };
+};
 
 export default function CandleAnimation() {
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
@@ -179,13 +199,13 @@ export default function CandleAnimation() {
                 <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
               </svg>
               <div key={`left-${currentQuoteIndex}`}>
-                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl text-white font-light leading-relaxed tracking-wide">
+                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl text-white font-bold leading-relaxed tracking-wide">
                   {quotes[currentQuoteIndex].left[0]}
                 </p>
-                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl font-light leading-relaxed tracking-wide">
+                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl font-bold leading-relaxed tracking-wide">
                   <span className="text-orange-300">{quotes[currentQuoteIndex].left[1]}</span>
                 </p>
-                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl text-white font-light leading-relaxed tracking-wide">
+                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl text-white font-bold leading-relaxed tracking-wide">
                   {quotes[currentQuoteIndex].left[2]}
                 </p>
               </div>
@@ -300,14 +320,14 @@ export default function CandleAnimation() {
             
             {/* Mobile Quote - Only visible on mobile */}
             <div className="lg:hidden text-center">
-              <div className="space-y-4" key={`mobile-${currentQuoteIndex}`}>
-                <p className="quote-line text-2xl sm:text-3xl text-white font-light leading-relaxed tracking-wide">
+              <div className="space-y-2" key={`mobile-${currentQuoteIndex}`}>
+                <p className="quote-line text-2xl sm:text-3xl text-white font-bold leading-tight tracking-wide">
                   {quotes[currentQuoteIndex].left[0]}
                 </p>
-                <p className="quote-line text-2xl sm:text-3xl font-light leading-relaxed tracking-wide">
+                <p className="quote-line text-2xl sm:text-3xl font-bold leading-tight tracking-wide">
                   <span className="text-orange-300">{quotes[currentQuoteIndex].left[1]}</span>
                 </p>
-                <p className="quote-line text-2xl sm:text-3xl text-white font-light leading-relaxed tracking-wide">
+                <p className="quote-line text-2xl sm:text-3xl text-white font-bold leading-tight tracking-wide">
                   {quotes[currentQuoteIndex].left[2]}
                 </p>
               </div>
@@ -330,13 +350,13 @@ export default function CandleAnimation() {
                 <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
               </svg>
               <div key={`right-${currentQuoteIndex}`}>
-                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl text-white font-light leading-relaxed tracking-wide">
+                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl text-white font-bold leading-relaxed tracking-wide">
                   {quotes[currentQuoteIndex].right[0]}
                 </p>
-                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl font-light leading-relaxed tracking-wide">
+                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl font-bold leading-relaxed tracking-wide">
                   <span className="text-orange-300">{quotes[currentQuoteIndex].right[1]}</span>
                 </p>
-                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl text-white font-light leading-relaxed tracking-wide">
+                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl text-white font-bold leading-relaxed tracking-wide">
                   {quotes[currentQuoteIndex].right[2]}
                 </p>
               </div>

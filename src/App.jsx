@@ -3,6 +3,8 @@ import { useState } from "react";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Loading from "./components/Loading";
+import ScrollToTop from "./components/ScrollToTop"; // Add this import
+
 import Home from "./pages/Home";
 import Vision from "./components/Vision";
 import Projects from "./components/Projects";
@@ -24,6 +26,7 @@ function App() {
 
   return (
     <Router>
+       <ScrollToTop /> 
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">

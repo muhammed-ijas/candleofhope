@@ -140,11 +140,19 @@ function Header() {
           </button>
         </div>
 
-        {/* Mobile Menu - Absolute positioned */}
-        <div className={`md:hidden absolute left-0 right-0 top-full bg-white shadow-2xl transition-all duration-300 ease-in-out ${
+        {/* Overlay for mobile menu - MOVED BEFORE MENU */}
+        {isMenuOpen && (
+          <div 
+            className="md:hidden fixed inset-0 bg-black/30 z-40 top-[80px]"
+            onClick={() => setIsMenuOpen(false)}
+          ></div>
+        )}
+
+        {/* Mobile Menu - z-50 to be above overlay */}
+        <div className={`md:hidden absolute left-0 right-0 top-full bg-white shadow-lg transition-all duration-300 ease-in-out z-50 ${
           isMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-4'
         }`}>
-          <div className="bg-red-50 mx-4 my-4 rounded-lg shadow-lg">
+          <div className="bg-red-50 mx-4 my-4 rounded-lg shadow-md">
             <nav className="flex flex-col space-y-1 p-4">
               <Link 
                 to="/" 
@@ -223,14 +231,6 @@ function Header() {
           </div>
         </div>
       </div>
-
-      {/* Overlay for mobile menu */}
-      {isMenuOpen && (
-        <div 
-          className="md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40 top-[80px]"
-          onClick={() => setIsMenuOpen(false)}
-        ></div>
-      )}
     </header>
   );
 }
