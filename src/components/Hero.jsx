@@ -73,15 +73,15 @@ function Hero() {
             {/* Subtle Background Decoration */}
             <div className="absolute -inset-10 sm:-inset-20 bg-gradient-to-br from-amber-500/10 via-transparent to-rose-500/10 rounded-3xl blur-3xl pointer-events-none"></div>
             
-            {/* Main Heading - Larger */}
+            {/* Main Heading - Larger on mobile */}
             <div className="space-y-1 relative z-10">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight font-numans">
+              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight font-numans">
                 <span className="block text-white drop-shadow-2xl">
                   Candle of Hope
                 </span>
               </h1>
               
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-amber-50 drop-shadow-xl font-numans">
+              <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-semibold text-amber-50 drop-shadow-xl font-numans">
                 International
               </h2>
             </div>
@@ -95,10 +95,10 @@ function Hero() {
             </p>
             
             {/* Call-to-Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 pt-2 sm:pt-3 relative z-10">
+            <div className="flex flex-row gap-3 pt-2 sm:pt-3 relative z-10">
               
               <button 
-                className="group relative px-6 sm:px-7 py-2.5 sm:py-3 bg-white text-red-900 text-xs sm:text-sm font-bold rounded-full overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-white/30 focus:outline-none focus:ring-4 focus:ring-white/50"
+                className="group relative px-4 sm:px-7 py-2.5 sm:py-3 bg-white text-red-900 text-xs sm:text-sm font-bold rounded-full overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-white/30 focus:outline-none focus:ring-4 focus:ring-white/50"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   Learn More
@@ -110,7 +110,7 @@ function Hero() {
               </button>
               
               <button 
-                className="group relative px-6 sm:px-7 py-2.5 sm:py-3 bg-transparent text-white text-xs sm:text-sm font-bold rounded-full border-2 border-white/90 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:bg-white hover:text-red-900 hover:scale-105 hover:shadow-xl hover:shadow-white/30 focus:outline-none focus:ring-4 focus:ring-white/50"
+                className="group relative px-4 sm:px-7 py-2.5 sm:py-3 bg-transparent text-white text-xs sm:text-sm font-bold rounded-full border-2 border-white/90 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:bg-white hover:text-red-900 hover:scale-105 hover:shadow-xl hover:shadow-white/30 focus:outline-none focus:ring-4 focus:ring-white/50"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   Join Our Mission
