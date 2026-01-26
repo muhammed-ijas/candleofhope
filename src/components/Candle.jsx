@@ -1,6 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function CandleAnimation() {
+  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+  
+  const quotes = [
+    {
+      left: ["Spreading light,", "one community", "at a time"],
+      right: ["Empowering", "rural communities", "with hope"]
+    },
+    {
+      left: ["Igniting change,", "through education", "and compassion"],
+      right: ["Building futures,", "one village", "at a time"]
+    },
+    {
+      left: ["Transforming lives,", "with sustainable", "development"],
+      right: ["Creating pathways,", "to opportunity", "and growth"]
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentQuoteIndex((prev) => (prev + 1) % quotes.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [quotes.length]);
+
   return (
     <div className="relative bg-black flex items-center justify-center overflow-hidden py-12 lg:py-20">
       
@@ -72,6 +96,28 @@ export default function CandleAnimation() {
           }
         }
         
+        @keyframes typewriter {
+          0% {
+            opacity: 0;
+            transform: translateX(-20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        @keyframes fadeOut {
+          0% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+          100% {
+            opacity: 0;
+            transform: translateX(20px);
+          }
+        }
+        
         .flame {
           animation: flicker 1.5s ease-in-out infinite;
         }
@@ -87,6 +133,23 @@ export default function CandleAnimation() {
         .fade-in {
           animation: fadeIn 1.5s ease-out forwards;
         }
+        
+        .quote-line {
+          animation: typewriter 0.8s ease-out forwards;
+          opacity: 0;
+        }
+        
+        .quote-line:nth-child(1) {
+          animation-delay: 0.2s;
+        }
+        
+        .quote-line:nth-child(2) {
+          animation-delay: 0.5s;
+        }
+        
+        .quote-line:nth-child(3) {
+          animation-delay: 0.8s;
+        }
       `}</style>
 
       {/* Glowing Background Effects */}
@@ -99,16 +162,22 @@ export default function CandleAnimation() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
           
           {/* Left Quote - Hidden on mobile */}
-          <div className="hidden lg:block fade-in text-right" style={{ animationDelay: '0.3s' }}>
+          <div className="hidden lg:block text-right">
             <div className="space-y-4">
               <svg className="w-16 h-16 ml-auto text-orange-400 opacity-40 mb-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
               </svg>
-              <p className="text-2xl sm:text-3xl lg:text-4xl text-white font-light leading-relaxed tracking-wide">
-                Spreading light,<br />
-                <span className="text-orange-300">one community</span><br />
-                at a time
-              </p>
+              <div key={`left-${currentQuoteIndex}`}>
+                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl text-white font-light leading-relaxed tracking-wide">
+                  {quotes[currentQuoteIndex].left[0]}
+                </p>
+                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl font-light leading-relaxed tracking-wide">
+                  <span className="text-orange-300">{quotes[currentQuoteIndex].left[1]}</span>
+                </p>
+                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl text-white font-light leading-relaxed tracking-wide">
+                  {quotes[currentQuoteIndex].left[2]}
+                </p>
+              </div>
             </div>
           </div>
 
@@ -154,8 +223,6 @@ export default function CandleAnimation() {
 
               {/* Candle Body */}
               <div className="relative mx-auto" style={{ width: '70px' }}>
-              
-                
                 {/* Candle Body */}
                 <div className="relative mx-auto" style={{
                   width: '70px',
@@ -200,8 +267,6 @@ export default function CandleAnimation() {
                     }}></div>
                   </div>
                 </div>
-                
-              
               </div>
 
               {/* Base Shadow */}
@@ -210,32 +275,42 @@ export default function CandleAnimation() {
                 height: '12px',
                 background: 'radial-gradient(ellipse, rgba(0,0,0,0.5) 0%, transparent 70%)',
                 filter: 'blur(8px)'
-              }}>              </div>
+              }}></div>
             </div>
             
             {/* Mobile Quote - Only visible on mobile */}
-            <div className="lg:hidden fade-in text-center" style={{ animationDelay: '0.7s' }}>
-              <div className="space-y-4">
-                <p className="text-2xl sm:text-3xl text-white font-light leading-relaxed tracking-wide">
-                  Spreading light,<br />
-                  <span className="text-orange-300">one community</span><br />
-                  at a time
+            <div className="lg:hidden text-center">
+              <div className="space-y-4" key={`mobile-${currentQuoteIndex}`}>
+                <p className="quote-line text-2xl sm:text-3xl text-white font-light leading-relaxed tracking-wide">
+                  {quotes[currentQuoteIndex].left[0]}
+                </p>
+                <p className="quote-line text-2xl sm:text-3xl font-light leading-relaxed tracking-wide">
+                  <span className="text-orange-300">{quotes[currentQuoteIndex].left[1]}</span>
+                </p>
+                <p className="quote-line text-2xl sm:text-3xl text-white font-light leading-relaxed tracking-wide">
+                  {quotes[currentQuoteIndex].left[2]}
                 </p>
               </div>
             </div>
           </div>
 
           {/* Right Quote - Hidden on mobile */}
-          <div className="hidden lg:block fade-in text-left" style={{ animationDelay: '0.7s' }}>
+          <div className="hidden lg:block text-left">
             <div className="space-y-4">
               <svg className="w-16 h-16 mr-auto text-orange-400 opacity-40 mb-6 transform rotate-180" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
               </svg>
-              <p className="text-2xl sm:text-3xl lg:text-4xl text-white font-light leading-relaxed tracking-wide">
-                Empowering<br />
-                <span className="text-orange-300">rural communities</span><br />
-                with hope
-              </p>
+              <div key={`right-${currentQuoteIndex}`}>
+                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl text-white font-light leading-relaxed tracking-wide">
+                  {quotes[currentQuoteIndex].right[0]}
+                </p>
+                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl font-light leading-relaxed tracking-wide">
+                  <span className="text-orange-300">{quotes[currentQuoteIndex].right[1]}</span>
+                </p>
+                <p className="quote-line text-2xl sm:text-3xl lg:text-4xl text-white font-light leading-relaxed tracking-wide">
+                  {quotes[currentQuoteIndex].right[2]}
+                </p>
+              </div>
             </div>
           </div>
 

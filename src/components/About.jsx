@@ -2,7 +2,7 @@ import React from 'react';
 
 function AboutUs() {
   return (
-    <section className="relative min-h-screen flex items-center py-20 overflow-hidden bg-white">
+    <section className="relative min-h-screen flex items-center py-20 overflow-hidden bg-white" id="about-section">
       
       {/* Floating Animation */}
       <style>{`

@@ -7,6 +7,23 @@ function Hero() {
     setIsVisible(true);
   }, []);
 
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about-section');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  const goToJoinUs = () => {
+    // For navigation, you'll need to implement this in your main app
+    // If using React Router: window.location.href = '/join-us';
+    // Or emit a custom event that your router can listen to
+    window.location.href = '/join-us';
+  };
+
   return (
     <section className="relative h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-rose-900">
       
@@ -19,6 +36,36 @@ function Hero() {
           50% {
             transform: translateY(-3px);
           }
+        }
+        
+        @keyframes rotateShine {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        
+        @keyframes pulseGlow {
+          0%, 100% {
+            opacity: 0.4;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
+        
+        .shine-border {
+          animation: rotateShine 8s linear infinite;
+        }
+        
+        .glow-pulse {
+          animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        html {
+          scroll-behavior: smooth;
         }
       `}</style>
       
@@ -42,7 +89,20 @@ function Hero() {
                   </div>
                 </div>
 
-               
+                {/* Animated Shine Border - Rotating */}
+                <div className="absolute -inset-1 shine-border">
+                  <div className="w-full h-full" style={{ borderRadius: '63% 37% 54% 46% / 55% 48% 52% 45%' }}>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-300 to-transparent opacity-60" style={{ 
+                      borderRadius: '63% 37% 54% 46% / 55% 48% 52% 45%',
+                      background: 'conic-gradient(from 0deg, transparent 0%, rgba(251, 191, 36, 0.8) 10%, rgba(251, 191, 36, 1) 20%, rgba(251, 191, 36, 0.8) 30%, transparent 40%, transparent 100%)'
+                    }}></div>
+                  </div>
+                </div>
+
+                {/* Pulsing Glow Effect */}
+                <div className="absolute -inset-2 glow-pulse">
+                  <div className="w-full h-full bg-gradient-to-r from-amber-400/40 via-yellow-300/60 to-amber-400/40 blur-xl" style={{ borderRadius: '63% 37% 54% 46% / 55% 48% 52% 45%' }}></div>
+                </div>
                 
                 {/* Main Image (image1.jpg) - Front with original shape */}
                 <div className="relative w-full h-[280px] sm:h-[360px] lg:h-[450px] overflow-hidden shadow-2xl transform transition-transform duration-700 hover:scale-105 bg-white" style={{ borderRadius: '63% 37% 54% 46% / 55% 48% 52% 45%' }}>
@@ -61,9 +121,6 @@ function Hero() {
                   <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 w-8 h-8 sm:w-12 sm:h-12 border-b-4 border-r-4 border-white/40 rounded-br-2xl"></div>
                 </div>
               </div>
-
-              {/* Candle Icon - Static */}
-              
             </div>
           </div>
 
@@ -98,6 +155,7 @@ function Hero() {
             <div className="flex flex-row gap-3 pt-2 sm:pt-3 relative z-10">
               
               <button 
+                onClick={scrollToAbout}
                 className="group relative px-4 sm:px-7 py-2.5 sm:py-3 bg-white text-red-900 text-xs sm:text-sm font-bold rounded-full overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-white/30 focus:outline-none focus:ring-4 focus:ring-white/50"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
@@ -110,6 +168,7 @@ function Hero() {
               </button>
               
               <button 
+                onClick={goToJoinUs}
                 className="group relative px-4 sm:px-7 py-2.5 sm:py-3 bg-transparent text-white text-xs sm:text-sm font-bold rounded-full border-2 border-white/90 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:bg-white hover:text-red-900 hover:scale-105 hover:shadow-xl hover:shadow-white/30 focus:outline-none focus:ring-4 focus:ring-white/50"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
