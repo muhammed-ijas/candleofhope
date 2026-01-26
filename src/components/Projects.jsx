@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { fadeIn } from '../Varients';
 import { BookOpen, Heart, Briefcase, Users, GraduationCap, Zap, Building2, X } from 'lucide-react';
 
 export default function Projects() {
@@ -136,9 +138,16 @@ export default function Projects() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-16 xl:px-24 z-10 relative">
         
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-        
-
+        <motion.div 
+          variants={fadeIn("down", 0.1)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{
+            once: true,
+            margin: "-100px 0px -100px 0px",
+          }}
+          className="max-w-3xl mx-auto text-center mb-16"
+        >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-gray-900 mb-4">
             Ongoing Projects
           </h2>
@@ -146,7 +155,7 @@ export default function Projects() {
           <p className="text-base sm:text-base text-gray-600">
             Transformative initiatives creating lasting impact across rural communities
           </p>
-        </div>
+        </motion.div>
 
         {/* All 10 Projects Display */}
         <div className="max-w-6xl mx-auto">
@@ -155,13 +164,17 @@ export default function Projects() {
               const IconComponent = project.icon;
               
               return (
-                <button
+                <motion.button
                   key={project.id}
-                  onClick={() => setExpandedProject(project.id)}
-                  className="animate-slide-up w-full"
-                  style={{
-                    animationDelay: `${idx * 50}ms`
+                  variants={fadeIn("up", 0.05 * idx)}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{
+                    once: true,
+                    margin: "-100px 0px -100px 0px",
                   }}
+                  onClick={() => setExpandedProject(project.id)}
+                  className="w-full"
                 >
                   {/* Card Container */}
                   <div className="relative rounded-3xl p-6 overflow-hidden transition-all duration-500 neumorphic-card h-64 flex flex-col items-center justify-center">
@@ -182,7 +195,7 @@ export default function Projects() {
                       {project.category}
                     </p>
                   </div>
-                </button>
+                </motion.button>
               );
             })}
           </div>

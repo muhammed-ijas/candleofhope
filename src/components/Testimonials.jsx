@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { fadeIn } from '../Varients';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 export default function Testimonials() {
@@ -118,9 +120,16 @@ export default function Testimonials() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-16 xl:px-24 relative z-10">
         
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-8">
-         
-
+        <motion.div 
+          variants={fadeIn("down", 0.1)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{
+            once: true,
+            margin: "-100px 0px -100px 0px",
+          }}
+          className="max-w-3xl mx-auto text-center mb-8"
+        >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-white mb-3">
             Testimonials
           </h2>
@@ -128,10 +137,19 @@ export default function Testimonials() {
           <p className="text-sm sm:text-base text-amber-50/90">
             Real voices from the communities we serve
           </p>
-        </div>
+        </motion.div>
 
         {/* Testimonial Card */}
-        <div className="max-w-4xl mx-auto">
+        <motion.div 
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{
+            once: true,
+            margin: "-100px 0px -100px 0px",
+          }}
+          className="max-w-4xl mx-auto"
+        >
           <div className="relative  rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl">
             
             {/* Quote Icon */}
@@ -226,7 +244,7 @@ export default function Testimonials() {
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

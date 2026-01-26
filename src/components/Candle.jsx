@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { fadeIn } from '../Varients';
 
 export default function CandleAnimation() {
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
@@ -162,7 +164,16 @@ export default function CandleAnimation() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
           
           {/* Left Quote - Hidden on mobile */}
-          <div className="hidden lg:block text-right">
+          <motion.div 
+            variants={fadeIn("right", 0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{
+              once: true,
+              margin: "-100px 0px -100px 0px",
+            }}
+            className="hidden lg:block text-right"
+          >
             <div className="space-y-4">
               <svg className="w-16 h-16 ml-auto text-orange-400 opacity-40 mb-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
@@ -179,10 +190,19 @@ export default function CandleAnimation() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Center - Candle */}
-          <div className="flex flex-col items-center justify-center gap-8">
+          <motion.div 
+            variants={fadeIn("up", 0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{
+              once: true,
+              margin: "-100px 0px -100px 0px",
+            }}
+            className="flex flex-col items-center justify-center gap-8"
+          >
             <div className="relative float-animation" style={{ animationDelay: '0.5s' }}>
               
               {/* Flame */}
@@ -292,10 +312,19 @@ export default function CandleAnimation() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Quote - Hidden on mobile */}
-          <div className="hidden lg:block text-left">
+          <motion.div 
+            variants={fadeIn("left", 0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{
+              once: true,
+              margin: "-100px 0px -100px 0px",
+            }}
+            className="hidden lg:block text-left"
+          >
             <div className="space-y-4">
               <svg className="w-16 h-16 mr-auto text-orange-400 opacity-40 mb-6 transform rotate-180" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
@@ -312,7 +341,7 @@ export default function CandleAnimation() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
 

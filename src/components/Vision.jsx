@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { fadeIn } from '../Varients';
 import { BookOpen, Zap, Users, Globe, GraduationCap, Briefcase, Building2 } from 'lucide-react';
 
 function Vision() {
@@ -90,10 +92,17 @@ function Vision() {
       <div className="container mx-auto px-6 lg:px-16 xl:px-24 z-10 relative">
         
         {/* Top Section - Main Heading */}
-        <div className={`max-w-4xl mx-auto text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <motion.div 
+          variants={fadeIn("down", 0.1)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{
+            once: true,
+            margin: "-100px 0px -100px 0px",
+          }}
+          className="max-w-4xl mx-auto text-center mb-16"
+        >
           
-        
-
           {/* Main Heading */}
           <div className="space-y-4 mb-8">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white drop-shadow-2xl">
@@ -106,17 +115,21 @@ function Vision() {
           <p className="text-lg sm:text-xl text-gray-100 font-light leading-relaxed">
             Uplift rural villages through transformative, sustainable educational and social initiatives that empower communities to realise their potential and create a lasting impact.
           </p>
-        </div>
+        </motion.div>
 
         {/* Vision Points Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {visionPoints.map((point, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`group relative bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-6 border border-white/20 hover:border-red-400/50 hover:bg-white/15 transition-all duration-500 hover:shadow-2xl hover:shadow-red-500/20 overflow-hidden ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}
-              style={{
-                animationDelay: isVisible ? `${index * 100}ms` : '0ms'
+              variants={fadeIn("up", 0.1 * index)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{
+                once: true,
+                margin: "-100px 0px -100px 0px",
               }}
+              className="group relative bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-6 border border-white/20 hover:border-red-400/50 hover:bg-white/15 transition-all duration-500 hover:shadow-2xl hover:shadow-red-500/20 overflow-hidden"
             >
               {/* Gradient Background on Hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-red-400/10 via-transparent to-orange-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -141,7 +154,7 @@ function Vision() {
 
               {/* Border Accent */}
               <div className="absolute top-0 left-0 w-0 h-0.5 bg-gradient-to-r from-red-400 to-orange-300 group-hover:w-full transition-all duration-500"></div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

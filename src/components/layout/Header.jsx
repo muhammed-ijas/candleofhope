@@ -31,7 +31,7 @@ function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-6 lg:space-x-8">
-                 <Link 
+              <Link 
                 to="/" 
                 className={`transition-all duration-300 font-medium relative group py-1 text-sm ${
                   isActive('/') ? 'text-red-600' : 'text-gray-700 hover:text-red-600'
@@ -119,7 +119,7 @@ function Header() {
           {/* Mobile Menu Button */}
           <button 
             onClick={toggleMenu}
-            className="md:hidden text-gray-700 focus:outline-none hover:text-red-600 transition-colors duration-300"
+            className="md:hidden text-gray-700 focus:outline-none hover:text-red-600 transition-colors duration-300 z-50 relative"
             aria-label="Toggle menu"
           >
             <svg 
@@ -140,13 +140,15 @@ function Header() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden pb-4 bg-red-50 rounded-lg mt-2 px-4 shadow-lg">
-            <nav className="flex flex-col space-y-3 py-3">
-                  <Link 
+        {/* Mobile Menu - Absolute positioned */}
+        <div className={`md:hidden absolute left-0 right-0 top-full bg-white shadow-2xl transition-all duration-300 ease-in-out ${
+          isMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-4'
+        }`}>
+          <div className="bg-red-50 mx-4 my-4 rounded-lg shadow-lg">
+            <nav className="flex flex-col space-y-1 p-4">
+              <Link 
                 to="/" 
-                className={`transition-all duration-300 font-medium py-2 px-3 rounded-lg text-sm ${
+                className={`transition-all duration-300 font-medium py-3 px-4 rounded-lg text-sm ${
                   isActive('/') 
                     ? 'bg-red-100 text-red-700' 
                     : 'text-gray-700 hover:text-red-600 hover:bg-red-50'
@@ -157,7 +159,7 @@ function Header() {
               </Link>
               <Link 
                 to="/vision" 
-                className={`transition-all duration-300 font-medium py-2 px-3 rounded-lg text-sm ${
+                className={`transition-all duration-300 font-medium py-3 px-4 rounded-lg text-sm ${
                   isActive('/vision') 
                     ? 'bg-red-100 text-red-700' 
                     : 'text-gray-700 hover:text-red-600 hover:bg-red-50'
@@ -168,7 +170,7 @@ function Header() {
               </Link>
               <Link 
                 to="/projects" 
-                className={`transition-all duration-300 font-medium py-2 px-3 rounded-lg text-sm ${
+                className={`transition-all duration-300 font-medium py-3 px-4 rounded-lg text-sm ${
                   isActive('/projects') 
                     ? 'bg-red-100 text-red-700' 
                     : 'text-gray-700 hover:text-red-600 hover:bg-red-50'
@@ -179,7 +181,7 @@ function Header() {
               </Link>
               <Link 
                 to="/contact" 
-                className={`transition-all duration-300 font-medium py-2 px-3 rounded-lg text-sm ${
+                className={`transition-all duration-300 font-medium py-3 px-4 rounded-lg text-sm ${
                   isActive('/contact') 
                     ? 'bg-red-100 text-red-700' 
                     : 'text-gray-700 hover:text-red-600 hover:bg-red-50'
@@ -190,7 +192,7 @@ function Header() {
               </Link>
               <Link 
                 to="/join-us" 
-                className={`transition-all duration-300 font-medium py-2 px-3 rounded-lg text-sm ${
+                className={`transition-all duration-300 font-medium py-3 px-4 rounded-lg text-sm ${
                   isActive('/join-us') 
                     ? 'bg-red-100 text-red-700' 
                     : 'text-gray-700 hover:text-red-600 hover:bg-red-50'
@@ -201,7 +203,7 @@ function Header() {
               </Link>
               <Link 
                 to="/events" 
-                className={`transition-all duration-300 font-medium py-2 px-3 rounded-lg text-sm ${
+                className={`transition-all duration-300 font-medium py-3 px-4 rounded-lg text-sm ${
                   isActive('/events') 
                     ? 'bg-red-100 text-red-700' 
                     : 'text-gray-700 hover:text-red-600 hover:bg-red-50'
@@ -212,15 +214,23 @@ function Header() {
               </Link>
               <Link 
                 to="/donate" 
-                className="bg-gradient-to-r from-red-600 to-orange-600 text-white px-6 py-2 rounded-lg hover:from-red-700 hover:to-orange-700 transition-all duration-300 text-center shadow-lg font-semibold text-sm"
+                className="bg-gradient-to-r from-red-600 to-orange-600 text-white px-6 py-3 rounded-lg hover:from-red-700 hover:to-orange-700 transition-all duration-300 text-center shadow-lg font-semibold text-sm mt-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Donate
               </Link>
             </nav>
           </div>
-        )}
+        </div>
       </div>
+
+      {/* Overlay for mobile menu */}
+      {isMenuOpen && (
+        <div 
+          className="md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40 top-[80px]"
+          onClick={() => setIsMenuOpen(false)}
+        ></div>
+      )}
     </header>
   );
 }

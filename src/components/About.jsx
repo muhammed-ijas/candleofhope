@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { fadeIn } from '../Varients';
 
 function AboutUs() {
   return (
@@ -58,7 +60,16 @@ function AboutUs() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Content */}
-          <div className="lg:col-span-7 space-y-8">
+          <motion.div 
+            variants={fadeIn("right", 0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{
+              once: true,
+              margin: "-100px 0px -100px 0px",
+            }}
+            className="lg:col-span-7 space-y-8"
+          >
             
             {/* Section Label */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 rounded-full border border-red-100">
@@ -90,7 +101,16 @@ function AboutUs() {
             </div>
 
             {/* Stats/Highlights Grid */}
-            <div className="grid grid-cols-2 gap-3 sm:gap-5 pt-4">
+            <motion.div 
+              variants={fadeIn("up", 0.2)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{
+                once: true,
+                margin: "-100px 0px -100px 0px",
+              }}
+              className="grid grid-cols-2 gap-3 sm:gap-5 pt-4"
+            >
               <div className="group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-red-200 hover:-translate-y-2 transition-all duration-300 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
@@ -116,11 +136,20 @@ function AboutUs() {
                   <p className="text-xs sm:text-sm text-gray-600">Sustainable solutions</p>
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Side - Image Bento Grid */}
-          <div className="lg:col-span-5">
+          <motion.div 
+            variants={fadeIn("left", 0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{
+              once: true,
+              margin: "-100px 0px -100px 0px",
+            }}
+            className="lg:col-span-5"
+          >
             <div className="grid grid-cols-2 gap-4 max-w-md mx-auto lg:ml-auto">
               
               {/* Image 2 - Top Left */}
@@ -177,7 +206,7 @@ function AboutUs() {
               </div>
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

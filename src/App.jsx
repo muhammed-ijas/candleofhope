@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
+import Loading from "./components/Loading";
 import Home from "./pages/Home";
 import Vision from "./components/Vision";
 import Projects from "./components/Projects";
@@ -10,6 +12,16 @@ import Donate from "./pages/Donate";
 import Events from "./pages/Events";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  const handleLoadingComplete = () => {
+    setLoading(false);
+  };
+
+  if (loading) {
+    return <Loading onLoadingComplete={handleLoadingComplete} />;
+  }
+
   return (
     <Router>
       <div className="min-h-screen flex flex-col">

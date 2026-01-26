@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import { fadeIn } from '../Varients';
 
 function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,7 +29,7 @@ function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/image7.jpg" 
+          src="/image8.jpg" 
           alt="Candle of Hope Background" 
           className="w-full h-full object-cover"
         />
@@ -82,7 +84,16 @@ function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           
           {/* Left Side - Image Stack */}
-          <div className={`relative flex items-center justify-center order-2 lg:order-1 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
+          <motion.div 
+            variants={fadeIn("right", 0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{
+              once: true,
+              margin: "-100px 0px -100px 0px",
+            }}
+            className="relative flex items-center justify-center order-2 lg:order-1"
+          >
             
             {/* Decorative Circle Background */}
             <div className="absolute w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] lg:w-[380px] lg:h-[380px] bg-gradient-to-br from-red-400/20 to-red-600/20 rounded-full blur-3xl opacity-60"></div>
@@ -100,9 +111,6 @@ function Hero() {
                     }}></div>
                   </div>
                 </div>
-
-                {/* Pulsing Glow Effect */}
-              
                 
                 {/* Main Image (image1.jpg) - Front with original shape */}
                 <div className="relative w-full h-[280px] sm:h-[360px] lg:h-[450px] overflow-hidden shadow-2xl transform transition-transform duration-700 hover:scale-105 bg-white" style={{ borderRadius: '63% 37% 54% 46% / 55% 48% 52% 45%' }}>
@@ -122,10 +130,19 @@ function Hero() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Content */}
-          <div className={`text-white space-y-3 sm:space-y-4 order-1 lg:order-2 transition-all duration-1000 delay-300 relative ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
+          <motion.div 
+            variants={fadeIn("left", 0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{
+              once: true,
+              margin: "-100px 0px -100px 0px",
+            }}
+            className="text-white space-y-3 sm:space-y-4 order-1 lg:order-2 relative"
+          >
             
             {/* Subtle Background Decoration */}
             <div className="absolute -inset-10 sm:-inset-20 bg-gradient-to-br from-red-500/10 via-transparent to-red-600/10 rounded-3xl blur-3xl pointer-events-none"></div>
@@ -152,7 +169,16 @@ function Hero() {
             </p>
             
             {/* Call-to-Action Buttons */}
-            <div className="flex flex-row gap-3 pt-2 sm:pt-3 relative z-10">
+            <motion.div 
+              variants={fadeIn("up", 0.2)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{
+                once: true,
+                margin: "-100px 0px -100px 0px",
+              }}
+              className="flex flex-row gap-3 pt-2 sm:pt-3 relative z-10"
+            >
               
               <button 
                 onClick={scrollToAbout}
@@ -178,8 +204,8 @@ function Hero() {
                   </svg>
                 </span>
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
         </div>
       </div>
