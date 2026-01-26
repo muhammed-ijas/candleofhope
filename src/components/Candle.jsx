@@ -1,0 +1,247 @@
+import React from 'react';
+
+export default function CandleAnimation() {
+  return (
+    <div className="relative bg-black flex items-center justify-center overflow-hidden py-12 lg:py-20">
+      
+      {/* Animations */}
+      <style>{`
+        @keyframes flicker {
+          0%, 100% {
+            transform: scaleY(1) scaleX(1);
+            opacity: 1;
+          }
+          25% {
+            transform: scaleY(0.95) scaleX(1.05);
+            opacity: 0.9;
+          }
+          50% {
+            transform: scaleY(1.05) scaleX(0.95);
+            opacity: 0.95;
+          }
+          75% {
+            transform: scaleY(0.98) scaleX(1.02);
+            opacity: 0.92;
+          }
+        }
+        
+        @keyframes glow {
+          0%, 100% {
+            box-shadow: 0 0 20px rgba(255, 200, 50, 0.8),
+                        0 0 40px rgba(255, 150, 50, 0.6),
+                        0 0 60px rgba(255, 100, 50, 0.4);
+          }
+          50% {
+            box-shadow: 0 0 30px rgba(255, 200, 50, 1),
+                        0 0 60px rgba(255, 150, 50, 0.8),
+                        0 0 90px rgba(255, 100, 50, 0.6);
+          }
+        }
+        
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+        
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes waxDrip {
+          0% {
+            height: 0;
+            opacity: 0;
+          }
+          20% {
+            opacity: 0.6;
+          }
+          100% {
+            height: 100%;
+            opacity: 0.3;
+          }
+        }
+        
+        .flame {
+          animation: flicker 1.5s ease-in-out infinite;
+        }
+        
+        .glow-effect {
+          animation: glow 2s ease-in-out infinite;
+        }
+        
+        .float-animation {
+          animation: float 3s ease-in-out infinite;
+        }
+        
+        .fade-in {
+          animation: fadeIn 1.5s ease-out forwards;
+        }
+      `}</style>
+
+      {/* Glowing Background Effects */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-64 h-64 bg-orange-500 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 py-8">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
+          
+          {/* Left Quote - Hidden on mobile */}
+          <div className="hidden lg:block fade-in text-right" style={{ animationDelay: '0.3s' }}>
+            <div className="space-y-4">
+              <svg className="w-16 h-16 ml-auto text-orange-400 opacity-40 mb-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              </svg>
+              <p className="text-2xl sm:text-3xl lg:text-4xl text-white font-light leading-relaxed tracking-wide">
+                Spreading light,<br />
+                <span className="text-orange-300">one community</span><br />
+                at a time
+              </p>
+            </div>
+          </div>
+
+          {/* Center - Candle */}
+          <div className="flex flex-col items-center justify-center gap-8">
+            <div className="relative float-animation" style={{ animationDelay: '0.5s' }}>
+              
+              {/* Flame */}
+              <div className="relative mx-auto mb-2" style={{ width: '50px', height: '70px' }}>
+                {/* Outer Glow */}
+                <div className="absolute inset-0 glow-effect rounded-full" style={{
+                  background: 'radial-gradient(circle, rgba(255,200,50,0.8) 0%, rgba(255,150,50,0.4) 40%, transparent 70%)',
+                  filter: 'blur(15px)',
+                  transform: 'translateY(-15px)'
+                }}></div>
+                
+                {/* Main Flame */}
+                <div className="flame absolute left-1/2 -translate-x-1/2" style={{
+                  width: '40px',
+                  height: '60px',
+                  background: 'linear-gradient(to top, #ff6b00 0%, #ff8c00 20%, #ffa500 40%, #ffcc00 60%, #fff4e6 100%)',
+                  borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
+                  transformOrigin: 'bottom center'
+                }}>
+                  {/* Inner Flame */}
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{
+                    width: '20px',
+                    height: '35px',
+                    background: 'linear-gradient(to top, #ffcc00 0%, #fff4e6 50%, #ffffff 100%)',
+                    borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
+                    opacity: 0.9
+                  }}></div>
+                </div>
+                
+                {/* Wick */}
+                <div className="absolute left-1/2 -translate-x-1/2 bottom-0" style={{
+                  width: '3px',
+                  height: '20px',
+                  background: 'linear-gradient(to bottom, #2c1810 0%, #1a0f08 100%)',
+                  borderRadius: '2px'
+                }}></div>
+              </div>
+
+              {/* Candle Body */}
+              <div className="relative mx-auto" style={{ width: '70px' }}>
+              
+                
+                {/* Candle Body */}
+                <div className="relative mx-auto" style={{
+                  width: '70px',
+                  height: '180px',
+                  background: 'linear-gradient(to right, #8a1428 0%, #C41E3A 20%, #C41E3A 80%, #8a1428 100%)',
+                  boxShadow: 'inset -8px 0 15px rgba(0,0,0,0.3), inset 8px 0 15px rgba(255,255,255,0.1), 0 8px 25px rgba(0,0,0,0.5)',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}>
+                  {/* Wax Drip Effect */}
+                  <div className="absolute top-0 left-5 w-1.5 overflow-hidden" style={{
+                    height: '80px'
+                  }}>
+                    <div style={{
+                      width: '100%',
+                      background: 'linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.2) 50%, transparent 100%)',
+                      borderRadius: '2px',
+                      animation: 'waxDrip 8s ease-in infinite',
+                      animationDelay: '0s'
+                    }}></div>
+                  </div>
+                  <div className="absolute top-0 right-6 w-2 overflow-hidden" style={{
+                    height: '60px'
+                  }}>
+                    <div style={{
+                      width: '100%',
+                      background: 'linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.15) 50%, transparent 100%)',
+                      borderRadius: '2px',
+                      animation: 'waxDrip 10s ease-in infinite',
+                      animationDelay: '2s'
+                    }}></div>
+                  </div>
+                  <div className="absolute top-0 left-8 w-1 overflow-hidden" style={{
+                    height: '50px'
+                  }}>
+                    <div style={{
+                      width: '100%',
+                      background: 'linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 50%, transparent 100%)',
+                      borderRadius: '2px',
+                      animation: 'waxDrip 12s ease-in infinite',
+                      animationDelay: '4s'
+                    }}></div>
+                  </div>
+                </div>
+                
+              
+              </div>
+
+              {/* Base Shadow */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-5" style={{
+                width: '90px',
+                height: '12px',
+                background: 'radial-gradient(ellipse, rgba(0,0,0,0.5) 0%, transparent 70%)',
+                filter: 'blur(8px)'
+              }}>              </div>
+            </div>
+            
+            {/* Mobile Quote - Only visible on mobile */}
+            <div className="lg:hidden fade-in text-center" style={{ animationDelay: '0.7s' }}>
+              <div className="space-y-4">
+                <p className="text-2xl sm:text-3xl text-white font-light leading-relaxed tracking-wide">
+                  Spreading light,<br />
+                  <span className="text-orange-300">one community</span><br />
+                  at a time
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Quote - Hidden on mobile */}
+          <div className="hidden lg:block fade-in text-left" style={{ animationDelay: '0.7s' }}>
+            <div className="space-y-4">
+              <svg className="w-16 h-16 mr-auto text-orange-400 opacity-40 mb-6 transform rotate-180" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              </svg>
+              <p className="text-2xl sm:text-3xl lg:text-4xl text-white font-light leading-relaxed tracking-wide">
+                Empowering<br />
+                <span className="text-orange-300">rural communities</span><br />
+                with hope
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  );
+}

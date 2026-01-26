@@ -7,7 +7,7 @@ function Footer() {
           {/* About Section */}
           <div>
             <img 
-              src="/images/logo.png" 
+              src="/logo.png" 
               alt="Candle of Hope International" 
               className="h-16 w-auto mb-4 bg-white p-2 rounded-lg"
             />
