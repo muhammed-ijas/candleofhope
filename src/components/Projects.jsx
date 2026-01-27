@@ -87,8 +87,8 @@ export default function Projects() {
       // Standard red gradient for even indices (0, 2, 4, 6, 8)
       return 'bg-gradient-to-br from-red-600 to-red-700';
     } else {
-      // Darker red/crimson gradient for odd indices (1, 3, 5, 7, 9)
-      return 'bg-gradient-to-br from-red-800 to-red-900';
+      // Slightly darker red gradient for odd indices (1, 3, 5, 7, 9)
+      return 'bg-gradient-to-br from-red-700 to-red-800';
     }
   };
 
@@ -189,18 +189,13 @@ export default function Projects() {
                   {/* Card Container */}
                   <div className={`relative rounded-3xl p-6 overflow-hidden transition-all duration-500 neumorphic-card h-64 flex flex-col items-center justify-center ${getCardGradient(idx)}`}>
                     
-                    {/* Icon */}
-                    <div className="mb-4">
-                      <IconComponent className="w-12 h-12 text-white" strokeWidth={1.5} />
-                    </div>
-
-                    {/* Title - Truncated */}
-                    <h4 className="text-white font-bold text-center text-sm line-clamp-3 mb-3">
+                    {/* Title - Centered */}
+                    <h4 className="text-white font-bold text-center text-base line-clamp-4 mb-4">
                       {project.title}
                     </h4>
 
                     {/* Category Badge */}
-                    <p className="text-white/90 text-xs mt-auto bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">
+                    <p className="text-white/90 text-xs bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">
                       {project.category}
                     </p>
                   </div>
