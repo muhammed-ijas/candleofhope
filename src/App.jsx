@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Loading from "./components/Loading";
-import ScrollToTop from "./components/ScrollToTop"; // Add this import
+import ScrollToTop from "./components/ScrollToTop";
 
 import Home from "./pages/Home";
 import Vision from "./components/Vision";
@@ -15,18 +15,63 @@ import Events from "./pages/Events";
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Hero images to preload
+  const heroImages = [
+    '/image4.png',
+    '/image5.jpg',
+    '/image6.jpg',
+    '/image7.jpg',
+    '/image8.jpg',
+  ];
+
+  useEffect(() => {
+    // Preload all hero images
+    const preloadImages = async () => {
+      const imagePromises = heroImages.map((src) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = src;
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      });
+
+      try {
+        await Promise.all(imagePromises);
+        setImagesLoaded(true);
+      } catch (error) {
+        console.error("Error preloading images:", error);
+        // Still set as loaded even if some images fail
+        setImagesLoaded(true);
+      }
+    };
+
+    preloadImages();
+  }, []);
 
   const handleLoadingComplete = () => {
-    setLoading(false);
+    // Only hide loading screen when both timer is done AND images are loaded
+    if (imagesLoaded) {
+      setLoading(false);
+    }
   };
 
+  // Auto-hide loading when images are loaded (even if timer isn't done)
+  useEffect(() => {
+    if (imagesLoaded && !loading) {
+      setLoading(false);
+    }
+  }, [imagesLoaded]);
+
   if (loading) {
-    return <Loading onLoadingComplete={handleLoadingComplete} />;
+    return <Loading onLoadingComplete={handleLoadingComplete} imagesLoaded={imagesLoaded} />;
   }
 
   return (
     <Router>
-       <ScrollToTop /> 
+      <ScrollToTop /> 
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">

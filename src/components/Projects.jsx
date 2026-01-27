@@ -84,11 +84,11 @@ export default function Projects() {
   // Function to get card gradient based on index
   const getCardGradient = (index) => {
     if (index % 2 === 0) {
-      // Standard red gradient for even indices (0, 2, 4, 6, 8)
-      return 'bg-gradient-to-br from-red-600 to-red-700';
+      // Bright red gradient for even indices (0, 2, 4, 6, 8)
+      return 'bg-gradient-to-br from-red-500 to-red-600';
     } else {
-      // Slightly darker red gradient for odd indices (1, 3, 5, 7, 9)
-      return 'bg-gradient-to-br from-red-700 to-red-800';
+      // Deep crimson red gradient for odd indices (1, 3, 5, 7, 9)
+      return 'bg-gradient-to-br from-red-700 to-red-900';
     }
   };
 
@@ -161,7 +161,7 @@ export default function Projects() {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-gray-900 mb-4">
             Ongoing Projects
           </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-red-600 via-red-700 to-red-800 rounded-full mx-auto mb-6"></div>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-red-500 via-red-700 to-red-900 rounded-full mx-auto mb-6"></div>
           <p className="text-base sm:text-base text-gray-600">
             Transformative initiatives creating lasting impact across rural communities
           </p>

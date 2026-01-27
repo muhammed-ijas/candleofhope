@@ -8,8 +8,6 @@ function Hero() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   
   const images = [
-    '/image1.jpg',
-    '/image3.png',
     '/image4.png',
     '/image5.jpg',
     '/image6.jpg',
@@ -17,15 +15,9 @@ function Hero() {
     '/image8.jpg',
   ];
 
-  // Preload all images on component mount
   useEffect(() => {
     setIsVisible(true);
-    
-    // Preload images to cache them
-    images.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
+    // Images are already preloaded in App.jsx, no need to preload again
   }, []);
 
   useEffect(() => {
@@ -34,8 +26,8 @@ function Hero() {
       setTimeout(() => {
         setCurrentImageIndex((prev) => (prev + 1) % images.length);
         setIsTransitioning(false);
-      }, 500); // Half of transition duration
-    }, 4000); // Change image every 4 seconds
+      }, 500);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -59,42 +51,8 @@ function Hero() {
   return (
     <section className="relative h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden bg-gradient-to-br from-red-950 via-red-900 to-rose-950">
       
-      {/* Shining Squares Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="grid grid-cols-12 grid-rows-8 w-full h-full gap-4 p-4">
-            {[...Array(96)].map((_, i) => (
-              <div
-                key={i}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg"
-                style={{
-                  animation: `shine 3s ease-in-out infinite`,
-                  animationDelay: `${(i * 0.05)}s`
-                }}
-              ></div>
-            ))}
-          </div>
-        </div>
-        
-        <div className="absolute top-20 right-20 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-red-500/10 rounded-full blur-3xl animate-pulse"></div>
-      </div>
-
       {/* Animation Styles */}
       <style>{`
-        @keyframes shine {
-          0%, 100% {
-            opacity: 0.1;
-            transform: scale(1);
-            box-shadow: 0 0 0 rgba(255, 255, 255, 0);
-          }
-          50% {
-            opacity: 0.8;
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
-          }
-        }
-        
         @keyframes rotateShine {
           0% {
             transform: rotate(0deg);
