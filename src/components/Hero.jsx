@@ -8,7 +8,7 @@ function Hero() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   
   const images = [
-    '/image1.png',
+    '/image1.jpg',
     '/image3.png',
     '/image4.png',
     '/image5.jpg',
