@@ -181,9 +181,9 @@ export default function Projects() {
                   
 
                     {/* Number Badge */}
-                    <div className="text-5xl font-bold text-white/90 mb-2">
+                    {/* <div className="text-5xl font-bold text-white/90 mb-2">
                       {String(project.id).padStart(2, '0')}
-                    </div>
+                    </div> */}
 
                     {/* Title - Truncated */}
                     <h4 className="text-white font-bold text-center text-sm line-clamp-2">
