@@ -81,6 +81,17 @@ export default function Projects() {
 
   const expandedData = expandedProject ? projects.find(p => p.id === expandedProject) : null;
 
+  // Function to get card gradient based on index
+  const getCardGradient = (index) => {
+    if (index % 2 === 0) {
+      // Standard red gradient for even indices (0, 2, 4, 6, 8)
+      return 'bg-gradient-to-br from-red-600 to-red-700';
+    } else {
+      // Darker red/crimson gradient for odd indices (1, 3, 5, 7, 9)
+      return 'bg-gradient-to-br from-red-800 to-red-900';
+    }
+  };
+
   return (
     <div className="relative min-h-screen bg-white py-16 sm:py-20 lg:py-24 overflow-hidden">
       {/* Animations */}
@@ -123,7 +134,6 @@ export default function Projects() {
           animation: fadeIn 0.3s ease-out forwards;
         }
         .neumorphic-card {
-          background: #dc2626;
           box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.3),
                       -15px -15px 30px rgba(255, 255, 255, 0.1);
           transition: all 0.3s ease;
@@ -151,7 +161,7 @@ export default function Projects() {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-gray-900 mb-4">
             Ongoing Projects
           </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-red-400 via-orange-300 to-orange-400 rounded-full mx-auto mb-6"></div>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-red-600 via-red-700 to-red-800 rounded-full mx-auto mb-6"></div>
           <p className="text-base sm:text-base text-gray-600">
             Transformative initiatives creating lasting impact across rural communities
           </p>
@@ -177,21 +187,20 @@ export default function Projects() {
                   className="w-full"
                 >
                   {/* Card Container */}
-                  <div className="relative rounded-3xl p-6 overflow-hidden transition-all duration-500 neumorphic-card h-64 flex flex-col items-center justify-center">
-                  
-
-                    {/* Number Badge */}
-                    {/* <div className="text-5xl font-bold text-white/90 mb-2">
-                      {String(project.id).padStart(2, '0')}
-                    </div> */}
+                  <div className={`relative rounded-3xl p-6 overflow-hidden transition-all duration-500 neumorphic-card h-64 flex flex-col items-center justify-center ${getCardGradient(idx)}`}>
+                    
+                    {/* Icon */}
+                    <div className="mb-4">
+                      <IconComponent className="w-12 h-12 text-white" strokeWidth={1.5} />
+                    </div>
 
                     {/* Title - Truncated */}
-                    <h4 className="text-white font-bold text-center text-sm line-clamp-2">
+                    <h4 className="text-white font-bold text-center text-sm line-clamp-3 mb-3">
                       {project.title}
                     </h4>
 
                     {/* Category Badge */}
-                    <p className="text-white/70 text-xs mt-3 bg-white/10 px-3 py-1 rounded-full backdrop-blur-sm">
+                    <p className="text-white/90 text-xs mt-auto bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">
                       {project.category}
                     </p>
                   </div>
@@ -218,7 +227,6 @@ export default function Projects() {
             <div className="sticky top-0 bg-gradient-to-r from-red-600 to-red-700 text-white p-8 flex items-start justify-between rounded-t-3xl">
               <div className="flex-1">
                 <div className="inline-flex items-center gap-2 mb-3">
-                
                   <span className="text-xs font-semibold text-red-200 bg-red-900/50 px-3 py-1 rounded-full">
                     {expandedData.category}
                   </span>
@@ -243,8 +251,6 @@ export default function Projects() {
                   {expandedData.description}
                 </p>
               </div>
-
-             
 
               {/* Close Button */}
               <button
