@@ -15,7 +15,7 @@ export default function Projects() {
       title: "Foundation Learning Centres (FLC)",
       description: "Structured learning spaces that strengthen foundational literacy and numeracy for children and adults in isolated rural villages, using a level-based, personalised teaching approach.",
       icon: BookOpen,
-      images: ['/project1a.jpg', '/project1b.jpg', '/project1c.jpg', '/project1d.jpg']
+      images: ['/project1a.png', '/project1b.png', '/project1c.png', '/project1d.png']
     },
     {
       id: 2,
@@ -424,13 +424,7 @@ export default function Projects() {
                     </p>
                   </div>
 
-                  {/* Close Button */}
-                  <button
-                    onClick={() => setExpandedProject(null)}
-                    className="w-full py-2 sm:py-2.5 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-xl text-xs sm:text-sm font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg hover:shadow-xl"
-                  >
-                    Close
-                  </button>
+                 
                 </div>
               </div>
 
