@@ -8,151 +8,187 @@ export default function Projects() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imageError, setImageError] = useState({});
 
-  const projects = [
+  // Organized by categories with 4 cards each
+  const categories = [
     {
-      id: 1,
-      category: "Education & Literacy",
-      title: "Foundation Learning Centres (FLC)",
-      description: "Structured learning spaces that strengthen foundational literacy and numeracy for children and adults in isolated rural villages, using a level-based, personalised teaching approach.",
-      icon: BookOpen,
-      images: ['/project1a.png', '/project1b.png', '/project1c.png', '/project1d.png']
+      name: "Education",
+      projects: [
+        {
+          id: 1,
+          title: "Foundation Learning Centres (FLC)",
+          description: "Structured learning spaces that strengthen foundational literacy and numeracy for children and adults in isolated rural villages, using a level-based, personalised teaching approach.",
+          icon: BookOpen,
+          images: ['/project1a.png', '/project1b.png', '/project1c.png', '/project1d.png']
+        },
+        {
+          id: 7,
+          title: "Teachers Training",
+          description: "Empowering educators with advanced teaching methodologies, modern pedagogical approaches, and skill-based training to improve educational quality in rural areas.",
+          icon: GraduationCap,
+          images: ['/project7a.jpg', '/project7b.jpg', '/project7c.jpg', '/project7d.jpg']
+        },
+        {
+          id: 8,
+          title: "Career Compass",
+          description: "A structured career guidance initiative that helps rural students explore opportunities, understand higher education pathways, and make informed career decisions.",
+          icon: Zap,
+          images: ['/project8a.jpg', '/project8b.jpg', '/project8c.jpg', '/project8d.jpg']
+        },
+        {
+          id: null,
+          title: "Coming Soon",
+          description: "",
+          icon: BookOpen,
+          images: [],
+          isPlaceholder: true
+        }
+      ]
     },
     {
-      id: 2,
-      category: "Health & Wellbeing",
-      title: "Project Jeevan Jyothi",
-      description: "A rural community–oriented awareness initiative conducted in collaboration with local organization's, addressing health, education, welfare, and social development issues.",
-      icon: Heart,
-      images: ['/project2a.jpg', '/project2b.jpg', '/project2c.jpg', '/project2d.jpg']
+      name: "Skill",
+      projects: [
+        {
+          id: 3,
+          title: "Skill Development Centre",
+          description: "The Stitching Centre equips rural women with practical tailoring skills, enabling them to earn independently and build sustainable livelihoods.",
+          icon: Briefcase,
+          images: ['/project3a.jpg', '/project3b.jpg', '/project3c.jpg', '/project3d.jpg']
+        },
+        {
+          id: 9,
+          title: "ICP – Industry Connect Program",
+          description: "Industry experts from diverse sectors visit rural training institutions to identify skilled and aspiring youth. Partner firms offer practical, hands-on training that helps learners gain industrial exposure and refine their technical competencies.",
+          icon: Briefcase,
+          images: ['/project9a.jpg', '/project9b.jpg', '/project9c.jpg', '/project9d.jpg']
+        },
+        {
+          id: null,
+          title: "Coming Soon",
+          description: "",
+          icon: Briefcase,
+          images: [],
+          isPlaceholder: true
+        },
+        {
+          id: null,
+          title: "Coming Soon",
+          description: "",
+          icon: Briefcase,
+          images: [],
+          isPlaceholder: true
+        }
+      ]
     },
     {
-      id: 3,
-      category: "Skill Development & Livelihood",
-      title: "Skill Development Centre",
-      description: "The Stitching Centre equips rural women with practical tailoring skills, enabling them to earn independently and build sustainable livelihoods.",
-      icon: Briefcase,
-      images: ['/project3a.jpg', '/project3b.jpg', '/project3c.jpg', '/project3d.jpg']
+      name: "Health",
+      projects: [
+        {
+          id: 2,
+          title: "Project Jeevan Jyothi",
+          description: "A rural community–oriented awareness initiative conducted in collaboration with local organization's, addressing health, education, welfare, and social development issues.",
+          icon: Heart,
+          images: ['/project2a.jpg', '/project2b.jpg', '/project2c.jpg', '/project2d.jpg']
+        },
+        {
+          id: 4,
+          title: "Monthly Charitable Medical Camp",
+          description: "Regular medical camps offering free consultations, basic check-ups, medicines, and health awareness sessions for underserved rural families.",
+          icon: Heart,
+          images: ['/project4a.jpg', '/project4b.jpg', '/project4c.jpg', '/project4d.jpg']
+        },
+        {
+          id: 6,
+          title: "Food Distribution Program",
+          description: "Attracting and retaining students from marginalised areas in the classroom through a supportive food distribution program that strengthens their engagement in education.",
+          icon: Users,
+          images: ['/project6a.jpg', '/project6b.jpg', '/project6c.jpg', '/project6d.jpg']
+        },
+        {
+          id: 10,
+          title: "Humanitarian & Welfare Programs",
+          description: "Small-scale relief efforts, including blanket distribution, food kits, study materials, clothing, and emergency assistance to families in distress.",
+          icon: Users,
+          images: ['/project10a.jpg', '/project10b.jpg', '/project10c.jpg', '/project10d.jpg']
+        }
+      ]
     },
     {
-      id: 4,
-      category: "Health & Wellbeing",
-      title: "Monthly Charitable Medical Camp",
-      description: "Regular medical camps offering free consultations, basic check-ups, medicines, and health awareness sessions for underserved rural families.",
-      icon: Heart,
-      images: ['/project4a.jpg', '/project4b.jpg', '/project4c.jpg', '/project4d.jpg']
-    },
-    {
-      id: 5,
-      category: "Skill Development & Livelihood",
-      title: "Samsi 2.0 – Model Community Project",
-      description: "A transformative initiative aimed at uplifting a marginalised snake-charmer community living in a slum area. The project focuses on education, health, livelihood, and social development to convert the colony into a sustainable, model community.",
-      icon: Building2,
-      images: ['/project5a.jpg', '/project5b.jpg', '/project5c.jpg', '/project5d.jpg']
-    },
-    {
-      id: 6,
-      category: "Health & Wellbeing",
-      title: "Food Distribution Program",
-      description: "Attracting and retaining students from marginalised areas in the classroom through a supportive food distribution program that strengthens their engagement in education.",
-      icon: Users,
-      images: ['/project6a.jpg', '/project6b.jpg', '/project6c.jpg', '/project6d.jpg']
-    },
-    {
-      id: 7,
-      category: "Skill Development & Livelihood",
-      title: "Teachers Training",
-      description: "Empowering educators with advanced teaching methodologies, modern pedagogical approaches, and skill-based training to improve educational quality in rural areas.",
-      icon: GraduationCap,
-      images: ['/project7a.jpg', '/project7b.jpg', '/project7c.jpg', '/project7d.jpg']
-    },
-    {
-      id: 8,
-      category: "Youth Upskilling",
-      title: "Career Compass",
-      description: "A structured career guidance initiative that helps rural students explore opportunities, understand higher education pathways, and make informed career decisions.",
-      icon: Zap,
-      images: ['/project8a.jpg', '/project8b.jpg', '/project8c.jpg', '/project8d.jpg']
-    },
-    {
-      id: 9,
-      category: "Education & Literacy",
-      title: "ICP – Industry Connect Program",
-      description: "Industry experts from diverse sectors visit rural training institutions to identify skilled and aspiring youth. Partner firms offer practical, hands-on training that helps learners gain industrial exposure and refine their technical competencies.",
-      icon: Briefcase,
-      images: ['/project9a.jpg', '/project9b.jpg', '/project9c.jpg', '/project9d.jpg']
-    },
-    {
-      id: 10,
-      category: "Health & Wellbeing",
-      title: "Humanitarian & Welfare Programs",
-      description: "Small-scale relief efforts, including blanket distribution, food kits, study materials, clothing, and emergency assistance to families in distress.",
-      icon: Users,
-      images: ['/project10a.jpg', '/project10b.jpg', '/project10c.jpg', '/project10d.jpg']
+      name: "Youth Upskilling",
+      projects: [
+        {
+          id: 5,
+          title: "Samsi 2.0 – Model Community Project",
+          description: "A transformative initiative aimed at uplifting a marginalised snake-charmer community living in a slum area. The project focuses on education, health, livelihood, and social development to convert the colony into a sustainable, model community.",
+          icon: Building2,
+          images: ['/project5a.jpg', '/project5b.jpg', '/project5c.jpg', '/project5d.jpg']
+        },
+        {
+          id: null,
+          title: "Coming Soon",
+          description: "",
+          icon: Building2,
+          images: [],
+          isPlaceholder: true
+        },
+        {
+          id: null,
+          title: "Coming Soon",
+          description: "",
+          icon: Building2,
+          images: [],
+          isPlaceholder: true
+        },
+        {
+          id: null,
+          title: "Coming Soon",
+          description: "",
+          icon: Building2,
+          images: [],
+          isPlaceholder: true
+        }
+      ]
     }
   ];
 
-  const expandedData = expandedProject ? projects.find(p => p.id === expandedProject) : null;
+  // Find expanded project from all categories
+  const expandedData = expandedProject 
+    ? categories.flatMap(cat => cat.projects).find(p => p.id === expandedProject) 
+    : null;
 
-  // Auto-slide images every 3 seconds - COMPLETELY FIXED
+  // Auto-slide images every 3 seconds
   useEffect(() => {
     if (!expandedData || !expandedData.images || expandedData.images.length === 0) {
       return;
     }
     
-    // Reset state when modal opens
     setCurrentImageIndex(0);
     setImageError({});
-    
-    console.log('🎬 Starting auto-slide for:', expandedData.title, 'Images:', expandedData.images.length);
     
     let intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => {
         const nextIndex = (prevIndex + 1) % expandedData.images.length;
-        console.log('📸 Auto-sliding:', prevIndex, '→', nextIndex);
         return nextIndex;
       });
     }, 3000);
 
     return () => {
-      console.log('⏹️ Stopping auto-slide');
       clearInterval(intervalId);
     };
-  }, [expandedData?.id]); // Use expandedData.id as dependency to force restart
+  }, [expandedData?.id]);
 
-  // Handle image error - Don't block the slide
   const handleImageError = (imagePath) => {
-    console.log('Image failed to load:', imagePath);
     setImageError(prev => ({ ...prev, [imagePath]: true }));
   };
 
-  // Navigate to specific image
   const goToImage = (index) => {
     setCurrentImageIndex(index);
-  };
-
-  // Navigate to previous image
-  const previousImage = () => {
-    if (!expandedData) return;
-    setCurrentImageIndex((prev) => 
-      prev === 0 ? expandedData.images.length - 1 : prev - 1
-    );
-  };
-
-  // Navigate to next image
-  const nextImage = () => {
-    if (!expandedData) return;
-    setCurrentImageIndex((prev) => 
-      (prev + 1) % expandedData.images.length
-    );
   };
 
   // Function to get card gradient based on index
   const getCardGradient = (index) => {
     if (index % 2 === 0) {
-      // Bright red gradient for even indices (0, 2, 4, 6, 8)
       return 'bg-gradient-to-br from-red-500 to-red-600';
     } else {
-      // Deep crimson red gradient for odd indices (1, 3, 5, 7, 9)
       return 'bg-gradient-to-br from-red-700 to-red-900';
     }
   };
@@ -189,22 +225,6 @@ export default function Projects() {
             opacity: 1;
           }
         }
-        @keyframes imageFade {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-        @keyframes rotateShine {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
         .animate-slide-up {
           animation: slideUp 0.5s ease-out forwards;
         }
@@ -213,12 +233,6 @@ export default function Projects() {
         }
         .animate-fade-in {
           animation: fadeIn 0.3s ease-out forwards;
-        }
-        .animate-image-fade {
-          animation: imageFade 0.5s ease-in-out;
-        }
-        .animate-spin-slow {
-          animation: rotateShine 8s linear infinite;
         }
         .neumorphic-card {
           box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.3),
@@ -254,42 +268,82 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        {/* All 10 Projects Display */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8">
-            {projects.map((project, idx) => {
-              const IconComponent = project.icon;
-              
-              return (
-                <motion.button
-                  key={project.id}
-                  variants={fadeIn("up", 0.05 * idx)}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{
-                    once: true,
-                    margin: "-100px 0px -100px 0px",
-                  }}
-                  onClick={() => setExpandedProject(project.id)}
-                  className="w-full"
-                >
-                  {/* Card Container */}
-                  <div className={`relative rounded-3xl p-6 overflow-hidden transition-all duration-500 neumorphic-card h-64 flex flex-col items-center justify-center ${getCardGradient(idx)}`}>
-                    
-                    {/* Title - Centered */}
-                    <h4 className="text-white font-bold text-center text-base line-clamp-4 mb-4">
-                      {project.title}
-                    </h4>
+        {/* Categories */}
+        <div className="max-w-6xl mx-auto space-y-12">
+          {categories.map((category) => (
+            <div key={category.name}>
+              {/* Category Title */}
+              <motion.div
+                variants={fadeIn("right", 0.1)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{
+                  once: true,
+                  margin: "-100px 0px -100px 0px",
+                }}
+                className="mb-6"
+              >
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+                  {category.name}
+                </h3>
+                <div className="w-16 h-1 bg-gradient-to-r from-red-600 to-red-700 rounded-full"></div>
+              </motion.div>
 
-                    {/* Category Badge */}
-                    <p className="text-white/90 text-xs bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">
-                      {project.category}
-                    </p>
-                  </div>
-                </motion.button>
-              );
-            })}
-          </div>
+              {/* Projects Grid - Always 4 cards, no zigzag, reduced spacing */}
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                {category.projects.map((project, idx) => {
+                  const IconComponent = project.icon;
+                  
+                  return (
+                    <motion.button
+                      key={`${category.name}-${idx}`}
+                      variants={fadeIn("up", 0.05 * idx)}
+                      initial="hidden"
+                      whileInView="show"
+                      viewport={{
+                        once: true,
+                        margin: "-100px 0px -100px 0px",
+                      }}
+                      onClick={() => !project.isPlaceholder && setExpandedProject(project.id)}
+                      className="w-full"
+                      disabled={project.isPlaceholder}
+                    >
+                      {/* Card Container */}
+                      <div className={`relative rounded-3xl p-4 overflow-hidden transition-all duration-500 h-52 flex flex-col items-center justify-center ${
+                        project.isPlaceholder 
+                          ? 'bg-gradient-to-br from-gray-200 to-gray-300 cursor-not-allowed opacity-60' 
+                          : `neumorphic-card ${getCardGradient(idx)}`
+                      }`}>
+                        
+                        {project.isPlaceholder ? (
+                          <>
+                            <div className="w-10 h-10 bg-white/30 rounded-full flex items-center justify-center mb-3">
+                              <IconComponent className="w-5 h-5 text-gray-500" />
+                            </div>
+                            <h4 className="text-gray-600 font-bold text-center text-sm">
+                              {project.title}
+                            </h4>
+                          </>
+                        ) : (
+                          <>
+                            {/* Title - Centered */}
+                            <h4 className="text-white font-bold text-center text-sm line-clamp-4 mb-3">
+                              {project.title}
+                            </h4>
+
+                            {/* Category Badge */}
+                            <p className="text-white/90 text-xs bg-white/20 px-2 py-1 rounded-full backdrop-blur-sm">
+                              {category.name}
+                            </p>
+                          </>
+                        )}
+                      </div>
+                    </motion.button>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -315,11 +369,6 @@ export default function Projects() {
             {/* Modal Header */}
             <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-3 sm:p-4 flex items-start justify-between flex-shrink-0">
               <div className="flex-1 min-w-0">
-                <div className="inline-flex items-center gap-2 mb-1">
-                  <span className="text-[10px] font-semibold text-red-200 bg-red-900/50 px-2 py-0.5 rounded-full">
-                    {expandedData.category}
-                  </span>
-                </div>
                 <h2 className="text-base sm:text-xl font-bold truncate pr-2">
                   {expandedData.title}
                 </h2>
@@ -337,14 +386,11 @@ export default function Projects() {
               
               {/* LEFT/TOP - Image Slider */}
               <div className="bg-gradient-to-br from-red-50 to-orange-50 p-4 sm:p-6 flex flex-col items-center justify-center flex-shrink-0 lg:flex-shrink">
-                <div className="relative w-full max-w-[240px] sm:max-w-[280px]">
+                <div className="relative w-full max-w-[280px]">
                   
-                  {/* Image Container - Aspect Square */}
+                  {/* Image Container - Rounded Square */}
                   <div className="aspect-square relative">
-                    {/* Image Container with organic shape - NO ANIMATED BORDER */}
-                    <div className="relative w-full h-full overflow-hidden shadow-2xl bg-gradient-to-br from-red-950 via-red-900 to-black" 
-                      style={{ borderRadius: '63% 37% 54% 46% / 55% 48% 52% 45%' }}
-                    >
+                    <div className="relative w-full h-full overflow-hidden shadow-2xl bg-gradient-to-br from-red-950 via-red-900 to-black rounded-3xl">
                       {expandedData.images && expandedData.images.map((image, index) => (
                         <div
                           key={`${expandedData.id}-${image}-${index}`}
@@ -355,20 +401,20 @@ export default function Projects() {
                           {imageError[image] ? (
                             // Fallback when image fails to load
                             <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-50 via-orange-50 to-amber-50">
-                              <div className="text-center space-y-1.5 px-3">
-                                <div className="relative w-12 h-12 mx-auto">
+                              <div className="text-center space-y-2 px-3">
+                                <div className="relative w-16 h-16 mx-auto">
                                   <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-red-700 rounded-full opacity-20 animate-pulse"></div>
-                                  <div className="absolute inset-1.5 bg-white rounded-full border-2 border-red-400 flex items-center justify-center shadow-lg">
-                                    <span className="text-xl font-bold text-red-600">
+                                  <div className="absolute inset-2 bg-white rounded-full border-2 border-red-400 flex items-center justify-center shadow-lg">
+                                    <span className="text-2xl font-bold text-red-600">
                                       {index + 1}
                                     </span>
                                   </div>
                                 </div>
-                                <div className="space-y-0.5">
-                                  <p className="text-red-900 font-bold text-xs">
+                                <div className="space-y-1">
+                                  <p className="text-red-900 font-bold text-sm">
                                     Image {index + 1}
                                   </p>
-                                  <p className="text-red-700 text-[9px] bg-white/80 px-2 py-0.5 rounded-full inline-block shadow-sm">
+                                  <p className="text-red-700 text-xs bg-white/80 px-2 py-1 rounded-full inline-block shadow-sm">
                                     {image.split('/').pop()}
                                   </p>
                                 </div>
@@ -378,20 +424,17 @@ export default function Projects() {
                             <img
                               src={image}
                               alt={`${expandedData.title} - Image ${index + 1}`}
-                              className="w-full h-full object-cover"
+                              className="w-full h-full object-cover rounded-3xl"
                               onError={() => handleImageError(image)}
                             />
                           )}
                         </div>
                       ))}
-                      
-                      {/* Gradient overlay on hover */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-red-900/40 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                     </div>
                   </div>
 
                   {/* Image indicators - Below image, centered */}
-                  <div className="mt-3 sm:mt-4 flex justify-center gap-1.5">
+                  <div className="mt-4 flex justify-center gap-2">
                     {expandedData.images && expandedData.images.map((_, index) => (
                       <button
                         key={`dot-${expandedData.id}-${index}`}
@@ -399,10 +442,10 @@ export default function Projects() {
                           e.stopPropagation();
                           goToImage(index);
                         }}
-                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                        className={`h-2 rounded-full transition-all duration-300 ${
                           index === currentImageIndex 
-                            ? 'bg-red-600 w-6' 
-                            : 'bg-red-300 w-1.5 hover:bg-red-400'
+                            ? 'bg-red-600 w-8' 
+                            : 'bg-red-300 w-2 hover:bg-red-400'
                         }`}
                       />
                     ))}
@@ -412,19 +455,17 @@ export default function Projects() {
 
               {/* RIGHT/BOTTOM - Description */}
               <div className="p-4 sm:p-6 flex flex-col justify-center bg-white lg:overflow-y-auto">
-                <div className="space-y-3 sm:space-y-4">
+                <div className="space-y-4">
                   {/* Description */}
                   <div>
-                    <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-2 sm:mb-3 flex items-center gap-2">
-                      <div className="w-1 h-4 sm:h-5 bg-gradient-to-b from-red-600 to-red-700 rounded-full"></div>
+                    <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-3 flex items-center gap-2">
+                      <div className="w-1 h-5 bg-gradient-to-b from-red-600 to-red-700 rounded-full"></div>
                       Project Overview
                     </h3>
                     <p className="text-gray-700 leading-relaxed text-xs sm:text-sm">
                       {expandedData.description}
                     </p>
                   </div>
-
-                 
                 </div>
               </div>
 
