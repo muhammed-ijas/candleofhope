@@ -11,7 +11,7 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      category: "Education",
+      category: "Education & Literacy",
       title: "Foundation Learning Centres (FLC)",
       description: "Structured learning spaces that strengthen foundational literacy and numeracy for children and adults in isolated rural villages, using a level-based, personalised teaching approach.",
       icon: BookOpen,
@@ -19,7 +19,7 @@ export default function Projects() {
     },
     {
       id: 2,
-      category: "Health & Awareness",
+      category: "Health & Wellbeing",
       title: "Project Jeevan Jyothi",
       description: "A rural community–oriented awareness initiative conducted in collaboration with local organization's, addressing health, education, welfare, and social development issues.",
       icon: Heart,
@@ -27,7 +27,7 @@ export default function Projects() {
     },
     {
       id: 3,
-      category: "Skill Development",
+      category: "Skill Development & Livelihood",
       title: "Skill Development Centre",
       description: "The Stitching Centre equips rural women with practical tailoring skills, enabling them to earn independently and build sustainable livelihoods.",
       icon: Briefcase,
@@ -35,7 +35,7 @@ export default function Projects() {
     },
     {
       id: 4,
-      category: "Health & Medical",
+      category: "Health & Wellbeing",
       title: "Monthly Charitable Medical Camp",
       description: "Regular medical camps offering free consultations, basic check-ups, medicines, and health awareness sessions for underserved rural families.",
       icon: Heart,
@@ -43,7 +43,7 @@ export default function Projects() {
     },
     {
       id: 5,
-      category: "Community Development",
+      category: "Skill Development & Livelihood",
       title: "Samsi 2.0 – Model Community Project",
       description: "A transformative initiative aimed at uplifting a marginalised snake-charmer community living in a slum area. The project focuses on education, health, livelihood, and social development to convert the colony into a sustainable, model community.",
       icon: Building2,
@@ -51,7 +51,7 @@ export default function Projects() {
     },
     {
       id: 6,
-      category: "Education & Support",
+      category: "Health & Wellbeing",
       title: "Food Distribution Program",
       description: "Attracting and retaining students from marginalised areas in the classroom through a supportive food distribution program that strengthens their engagement in education.",
       icon: Users,
@@ -59,7 +59,7 @@ export default function Projects() {
     },
     {
       id: 7,
-      category: "Training & Development",
+      category: "Skill Development & Livelihood",
       title: "Teachers Training",
       description: "Empowering educators with advanced teaching methodologies, modern pedagogical approaches, and skill-based training to improve educational quality in rural areas.",
       icon: GraduationCap,
@@ -67,7 +67,7 @@ export default function Projects() {
     },
     {
       id: 8,
-      category: "Career Development",
+      category: "Youth Upskilling",
       title: "Career Compass",
       description: "A structured career guidance initiative that helps rural students explore opportunities, understand higher education pathways, and make informed career decisions.",
       icon: Zap,
@@ -75,7 +75,7 @@ export default function Projects() {
     },
     {
       id: 9,
-      category: "Industry & Employment",
+      category: "Education & Literacy",
       title: "ICP – Industry Connect Program",
       description: "Industry experts from diverse sectors visit rural training institutions to identify skilled and aspiring youth. Partner firms offer practical, hands-on training that helps learners gain industrial exposure and refine their technical competencies.",
       icon: Briefcase,
@@ -83,7 +83,7 @@ export default function Projects() {
     },
     {
       id: 10,
-      category: "Welfare & Relief",
+      category: "Health & Wellbeing",
       title: "Humanitarian & Welfare Programs",
       description: "Small-scale relief efforts, including blanket distribution, food kits, study materials, clothing, and emergency assistance to families in distress.",
       icon: Users,
