@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../Varients';
 import { BookOpen, Heart, Briefcase, Users, GraduationCap, Zap, Building2, X } from 'lucide-react';
 
 export default function Projects() {
   const [expandedProject, setExpandedProject] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imageError, setImageError] = useState({});
 
   const projects = [
     {
@@ -12,74 +14,137 @@ export default function Projects() {
       category: "Education",
       title: "Foundation Learning Centres (FLC)",
       description: "Structured learning spaces that strengthen foundational literacy and numeracy for children and adults in isolated rural villages, using a level-based, personalised teaching approach.",
-      icon: BookOpen
+      icon: BookOpen,
+      images: ['/project1a.jpg', '/project1b.jpg', '/project1c.jpg', '/project1d.jpg']
     },
     {
       id: 2,
       category: "Health & Awareness",
       title: "Project Jeevan Jyothi",
       description: "A rural community–oriented awareness initiative conducted in collaboration with local organization's, addressing health, education, welfare, and social development issues.",
-      icon: Heart
+      icon: Heart,
+      images: ['/project2a.jpg', '/project2b.jpg', '/project2c.jpg', '/project2d.jpg']
     },
     {
       id: 3,
       category: "Skill Development",
       title: "Skill Development Centre",
       description: "The Stitching Centre equips rural women with practical tailoring skills, enabling them to earn independently and build sustainable livelihoods.",
-      icon: Briefcase
+      icon: Briefcase,
+      images: ['/project3a.jpg', '/project3b.jpg', '/project3c.jpg', '/project3d.jpg']
     },
     {
       id: 4,
       category: "Health & Medical",
       title: "Monthly Charitable Medical Camp",
       description: "Regular medical camps offering free consultations, basic check-ups, medicines, and health awareness sessions for underserved rural families.",
-      icon: Heart
+      icon: Heart,
+      images: ['/project4a.jpg', '/project4b.jpg', '/project4c.jpg', '/project4d.jpg']
     },
     {
       id: 5,
       category: "Community Development",
       title: "Samsi 2.0 – Model Community Project",
       description: "A transformative initiative aimed at uplifting a marginalised snake-charmer community living in a slum area. The project focuses on education, health, livelihood, and social development to convert the colony into a sustainable, model community.",
-      icon: Building2
+      icon: Building2,
+      images: ['/project5a.jpg', '/project5b.jpg', '/project5c.jpg', '/project5d.jpg']
     },
     {
       id: 6,
       category: "Education & Support",
       title: "Food Distribution Program",
       description: "Attracting and retaining students from marginalised areas in the classroom through a supportive food distribution program that strengthens their engagement in education.",
-      icon: Users
+      icon: Users,
+      images: ['/project6a.jpg', '/project6b.jpg', '/project6c.jpg', '/project6d.jpg']
     },
     {
       id: 7,
       category: "Training & Development",
       title: "Teachers Training",
       description: "Empowering educators with advanced teaching methodologies, modern pedagogical approaches, and skill-based training to improve educational quality in rural areas.",
-      icon: GraduationCap
+      icon: GraduationCap,
+      images: ['/project7a.jpg', '/project7b.jpg', '/project7c.jpg', '/project7d.jpg']
     },
     {
       id: 8,
       category: "Career Development",
       title: "Career Compass",
       description: "A structured career guidance initiative that helps rural students explore opportunities, understand higher education pathways, and make informed career decisions.",
-      icon: Zap
+      icon: Zap,
+      images: ['/project8a.jpg', '/project8b.jpg', '/project8c.jpg', '/project8d.jpg']
     },
     {
       id: 9,
       category: "Industry & Employment",
       title: "ICP – Industry Connect Program",
       description: "Industry experts from diverse sectors visit rural training institutions to identify skilled and aspiring youth. Partner firms offer practical, hands-on training that helps learners gain industrial exposure and refine their technical competencies.",
-      icon: Briefcase
+      icon: Briefcase,
+      images: ['/project9a.jpg', '/project9b.jpg', '/project9c.jpg', '/project9d.jpg']
     },
     {
       id: 10,
       category: "Welfare & Relief",
       title: "Humanitarian & Welfare Programs",
       description: "Small-scale relief efforts, including blanket distribution, food kits, study materials, clothing, and emergency assistance to families in distress.",
-      icon: Users
+      icon: Users,
+      images: ['/project10a.jpg', '/project10b.jpg', '/project10c.jpg', '/project10d.jpg']
     }
   ];
 
   const expandedData = expandedProject ? projects.find(p => p.id === expandedProject) : null;
+
+  // Auto-slide images every 3 seconds - COMPLETELY FIXED
+  useEffect(() => {
+    if (!expandedData || !expandedData.images || expandedData.images.length === 0) {
+      return;
+    }
+    
+    // Reset state when modal opens
+    setCurrentImageIndex(0);
+    setImageError({});
+    
+    console.log('🎬 Starting auto-slide for:', expandedData.title, 'Images:', expandedData.images.length);
+    
+    let intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % expandedData.images.length;
+        console.log('📸 Auto-sliding:', prevIndex, '→', nextIndex);
+        return nextIndex;
+      });
+    }, 3000);
+
+    return () => {
+      console.log('⏹️ Stopping auto-slide');
+      clearInterval(intervalId);
+    };
+  }, [expandedData?.id]); // Use expandedData.id as dependency to force restart
+
+  // Handle image error - Don't block the slide
+  const handleImageError = (imagePath) => {
+    console.log('Image failed to load:', imagePath);
+    setImageError(prev => ({ ...prev, [imagePath]: true }));
+  };
+
+  // Navigate to specific image
+  const goToImage = (index) => {
+    setCurrentImageIndex(index);
+  };
+
+  // Navigate to previous image
+  const previousImage = () => {
+    if (!expandedData) return;
+    setCurrentImageIndex((prev) => 
+      prev === 0 ? expandedData.images.length - 1 : prev - 1
+    );
+  };
+
+  // Navigate to next image
+  const nextImage = () => {
+    if (!expandedData) return;
+    setCurrentImageIndex((prev) => 
+      (prev + 1) % expandedData.images.length
+    );
+  };
 
   // Function to get card gradient based on index
   const getCardGradient = (index) => {
@@ -124,6 +189,22 @@ export default function Projects() {
             opacity: 1;
           }
         }
+        @keyframes imageFade {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        @keyframes rotateShine {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
         .animate-slide-up {
           animation: slideUp 0.5s ease-out forwards;
         }
@@ -132,6 +213,12 @@ export default function Projects() {
         }
         .animate-fade-in {
           animation: fadeIn 0.3s ease-out forwards;
+        }
+        .animate-image-fade {
+          animation: imageFade 0.5s ease-in-out;
+        }
+        .animate-spin-slow {
+          animation: rotateShine 8s linear infinite;
         }
         .neumorphic-card {
           box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.3),
@@ -216,44 +303,137 @@ export default function Projects() {
 
       {/* Modal */}
       {expandedData && (
-        <div className="animate-modal-in fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div 
+          className="animate-modal-in fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4"
+          onClick={() => setExpandedProject(null)}
+        >
+          <div 
+            className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[95vh] sm:h-[75vh] flex flex-col overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            
             {/* Modal Header */}
-            <div className="sticky top-0 bg-gradient-to-r from-red-600 to-red-700 text-white p-8 flex items-start justify-between rounded-t-3xl">
-              <div className="flex-1">
-                <div className="inline-flex items-center gap-2 mb-3">
-                  <span className="text-xs font-semibold text-red-200 bg-red-900/50 px-3 py-1 rounded-full">
+            <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-3 sm:p-4 flex items-start justify-between flex-shrink-0">
+              <div className="flex-1 min-w-0">
+                <div className="inline-flex items-center gap-2 mb-1">
+                  <span className="text-[10px] font-semibold text-red-200 bg-red-900/50 px-2 py-0.5 rounded-full">
                     {expandedData.category}
                   </span>
                 </div>
-                <h2 className="text-3xl font-bold">
+                <h2 className="text-base sm:text-xl font-bold truncate pr-2">
                   {expandedData.title}
                 </h2>
               </div>
               <button
                 onClick={() => setExpandedProject(null)}
-                className="ml-4 p-2 hover:bg-white/20 rounded-lg transition-colors"
+                className="ml-2 p-1.5 hover:bg-white/20 rounded-lg transition-colors flex-shrink-0"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
             </div>
 
-            {/* Modal Content */}
-            <div className="p-8 space-y-6">
-              {/* Description */}
-              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                <p className="text-gray-700 leading-relaxed text-base">
-                  {expandedData.description}
-                </p>
+            {/* Modal Content - Responsive Layout */}
+            <div className="flex-1 flex flex-col lg:grid lg:grid-cols-2 gap-0 min-h-0 overflow-y-auto lg:overflow-hidden">
+              
+              {/* LEFT/TOP - Image Slider */}
+              <div className="bg-gradient-to-br from-red-50 to-orange-50 p-4 sm:p-6 flex flex-col items-center justify-center flex-shrink-0 lg:flex-shrink">
+                <div className="relative w-full max-w-[240px] sm:max-w-[280px]">
+                  
+                  {/* Image Container - Aspect Square */}
+                  <div className="aspect-square relative">
+                    {/* Image Container with organic shape - NO ANIMATED BORDER */}
+                    <div className="relative w-full h-full overflow-hidden shadow-2xl bg-gradient-to-br from-red-950 via-red-900 to-black" 
+                      style={{ borderRadius: '63% 37% 54% 46% / 55% 48% 52% 45%' }}
+                    >
+                      {expandedData.images && expandedData.images.map((image, index) => (
+                        <div
+                          key={`${expandedData.id}-${image}-${index}`}
+                          className={`absolute inset-0 transition-opacity duration-700 ${
+                            index === currentImageIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                          }`}
+                        >
+                          {imageError[image] ? (
+                            // Fallback when image fails to load
+                            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-50 via-orange-50 to-amber-50">
+                              <div className="text-center space-y-1.5 px-3">
+                                <div className="relative w-12 h-12 mx-auto">
+                                  <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-red-700 rounded-full opacity-20 animate-pulse"></div>
+                                  <div className="absolute inset-1.5 bg-white rounded-full border-2 border-red-400 flex items-center justify-center shadow-lg">
+                                    <span className="text-xl font-bold text-red-600">
+                                      {index + 1}
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className="space-y-0.5">
+                                  <p className="text-red-900 font-bold text-xs">
+                                    Image {index + 1}
+                                  </p>
+                                  <p className="text-red-700 text-[9px] bg-white/80 px-2 py-0.5 rounded-full inline-block shadow-sm">
+                                    {image.split('/').pop()}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          ) : (
+                            <img
+                              src={image}
+                              alt={`${expandedData.title} - Image ${index + 1}`}
+                              className="w-full h-full object-cover"
+                              onError={() => handleImageError(image)}
+                            />
+                          )}
+                        </div>
+                      ))}
+                      
+                      {/* Gradient overlay on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-red-900/40 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                    </div>
+                  </div>
+
+                  {/* Image indicators - Below image, centered */}
+                  <div className="mt-3 sm:mt-4 flex justify-center gap-1.5">
+                    {expandedData.images && expandedData.images.map((_, index) => (
+                      <button
+                        key={`dot-${expandedData.id}-${index}`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          goToImage(index);
+                        }}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                          index === currentImageIndex 
+                            ? 'bg-red-600 w-6' 
+                            : 'bg-red-300 w-1.5 hover:bg-red-400'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
 
-              {/* Close Button */}
-              <button
-                onClick={() => setExpandedProject(null)}
-                className="w-full py-2 text-gray-500 hover:text-gray-700 transition-colors font-semibold"
-              >
-                Close
-              </button>
+              {/* RIGHT/BOTTOM - Description */}
+              <div className="p-4 sm:p-6 flex flex-col justify-center bg-white lg:overflow-y-auto">
+                <div className="space-y-3 sm:space-y-4">
+                  {/* Description */}
+                  <div>
+                    <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-2 sm:mb-3 flex items-center gap-2">
+                      <div className="w-1 h-4 sm:h-5 bg-gradient-to-b from-red-600 to-red-700 rounded-full"></div>
+                      Project Overview
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed text-xs sm:text-sm">
+                      {expandedData.description}
+                    </p>
+                  </div>
+
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setExpandedProject(null)}
+                    className="w-full py-2 sm:py-2.5 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-xl text-xs sm:text-sm font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
