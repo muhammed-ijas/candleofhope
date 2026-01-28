@@ -25,14 +25,14 @@ export default function Projects() {
           title: "Teachers Training",
           description: "Empowering educators with advanced teaching methodologies, modern pedagogical approaches, and skill-based training to improve educational quality in rural areas.",
           icon: GraduationCap,
-          images: ['/project7a.jpg', '/project7b.jpg', '/project7c.jpg', '/project7d.jpg']
+          images: ['/project7a.png', '/project7b.png', '/project7c.png', '/project7d.png']
         },
         {
           id: 8,
           title: "Career Compass",
           description: "A structured career guidance initiative that helps rural students explore opportunities, understand higher education pathways, and make informed career decisions.",
           icon: Zap,
-          images: ['/project8a.jpg', '/project8b.jpg', '/project8c.jpg', '/project8d.jpg']
+          images: ['/project8a.png', '/project8b.png', '/project8c.png', '/project8d.png']
         },
         {
           id: null,
@@ -52,14 +52,14 @@ export default function Projects() {
           title: "Skill Development Centre",
           description: "The Stitching Centre equips rural women with practical tailoring skills, enabling them to earn independently and build sustainable livelihoods.",
           icon: Briefcase,
-          images: ['/project3a.jpg', '/project3b.jpg', '/project3c.jpg', '/project3d.jpg']
+          images: ['/project3a.png', '/project3b.png', '/project3c.png', '/project3d.png']
         },
         {
           id: 9,
           title: "ICP – Industry Connect Program",
           description: "Industry experts from diverse sectors visit rural training institutions to identify skilled and aspiring youth. Partner firms offer practical, hands-on training that helps learners gain industrial exposure and refine their technical competencies.",
           icon: Briefcase,
-          images: ['/project9a.jpg', '/project9b.jpg', '/project9c.jpg', '/project9d.jpg']
+          images: ['/project9a.png', '/project9b.png', '/project9c.png', '/project9d.png']
         },
         {
           id: null,
@@ -87,28 +87,28 @@ export default function Projects() {
           title: "Project Jeevan Jyothi",
           description: "A rural community–oriented awareness initiative conducted in collaboration with local organization's, addressing health, education, welfare, and social development issues.",
           icon: Heart,
-          images: ['/project2a.jpg', '/project2b.jpg', '/project2c.jpg', '/project2d.jpg']
+          images: ['/project2a.png', '/project2b.png', '/project2c.png', '/project2d.png']
         },
         {
           id: 4,
           title: "Monthly Charitable Medical Camp",
           description: "Regular medical camps offering free consultations, basic check-ups, medicines, and health awareness sessions for underserved rural families.",
           icon: Heart,
-          images: ['/project4a.jpg', '/project4b.jpg', '/project4c.jpg', '/project4d.jpg']
+          images: ['/project4a.png', '/project4b.png', '/project4c.png', '/project4d.png']
         },
         {
           id: 6,
           title: "Food Distribution Program",
           description: "Attracting and retaining students from marginalised areas in the classroom through a supportive food distribution program that strengthens their engagement in education.",
           icon: Users,
-          images: ['/project6a.jpg', '/project6b.jpg', '/project6c.jpg', '/project6d.jpg']
+          images: ['/project6a.png', '/project6b.png', '/project6c.png', '/project6d.png']
         },
         {
           id: 10,
           title: "Humanitarian & Welfare Programs",
           description: "Small-scale relief efforts, including blanket distribution, food kits, study materials, clothing, and emergency assistance to families in distress.",
           icon: Users,
-          images: ['/project10a.jpg', '/project10b.jpg', '/project10c.jpg', '/project10d.jpg']
+          images: ['/project10a.png', '/project10b.png', '/project10c.png', '/project10d.png']
         }
       ]
     },
@@ -120,7 +120,7 @@ export default function Projects() {
           title: "Samsi 2.0 – Model Community Project",
           description: "A transformative initiative aimed at uplifting a marginalised snake-charmer community living in a slum area. The project focuses on education, health, livelihood, and social development to convert the colony into a sustainable, model community.",
           icon: Building2,
-          images: ['/project5a.jpg', '/project5b.jpg', '/project5c.jpg', '/project5d.jpg']
+          images: ['/project5a.png', '/project5b.png', '/project5c.png', '/project5d.png']
         },
         {
           id: null,

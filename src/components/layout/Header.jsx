@@ -97,6 +97,17 @@ function Header() {
                   isActive('/events') ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
+              <Link 
+                to="/gallery" 
+                className={`transition-all duration-300 font-medium relative group py-1 text-sm ${
+                  isActive('/gallery') ? 'text-red-600' : 'text-gray-700 hover:text-red-600'
+                }`}
+              >
+                Gallery
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-red-600 transition-all duration-300 ${
+                  isActive('/gallery') ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
+              </Link>
             </nav>
           </div>
 
@@ -219,6 +230,17 @@ function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Events
+              </Link>
+              <Link 
+                to="/gallery" 
+                className={`transition-all duration-300 font-medium py-3 px-4 rounded-lg text-sm ${
+                  isActive('/gallery') 
+                    ? 'bg-red-100 text-red-700' 
+                    : 'text-gray-700 hover:text-red-600 hover:bg-red-50'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Gallery
               </Link>
               <Link 
                 to="/donate" 
