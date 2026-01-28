@@ -7,6 +7,7 @@ import Candle from '../components/Candle';
 import Testimonials from '../components/Testimonials';
 import JoinUs from '../components/JoinUs';
 import ContactUs from '../components/ContactUs';
+import Sdg from '../components/Sdg';
 
 function Home() {
   return (
@@ -16,8 +17,10 @@ function Home() {
       <Vision />
       <AreasOfWork />
       <Projects />
+      <Sdg />
       <Candle />
       <Testimonials />
+      
       <JoinUs />
       <ContactUs />
 
