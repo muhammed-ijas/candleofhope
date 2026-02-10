@@ -4,6 +4,7 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Loading from "./components/Loading";
 import ScrollToTop from "./components/ScrollToTop";
+import InaugurationOverlay from "./components/InagurationLayer"; // Add this import
 
 import Home from "./pages/Home";
 import Vision from "./components/Vision";
@@ -17,6 +18,7 @@ import Gallery from "./pages/Gallery";
 function App() {
   const [loading, setLoading] = useState(true);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [showInauguration, setShowInauguration] = useState(true); // Add this state
 
   // Hero images to preload
   const heroImages = [
@@ -44,7 +46,6 @@ function App() {
         setImagesLoaded(true);
       } catch (error) {
         console.error("Error preloading images:", error);
-        // Still set as loaded even if some images fail
         setImagesLoaded(true);
       }
     };
@@ -53,13 +54,11 @@ function App() {
   }, []);
 
   const handleLoadingComplete = () => {
-    // Only hide loading screen when both timer is done AND images are loaded
     if (imagesLoaded) {
       setLoading(false);
     }
   };
 
-  // Auto-hide loading when images are loaded (even if timer isn't done)
   useEffect(() => {
     if (imagesLoaded && !loading) {
       setLoading(false);
@@ -68,6 +67,11 @@ function App() {
 
   if (loading) {
     return <Loading onLoadingComplete={handleLoadingComplete} imagesLoaded={imagesLoaded} />;
+  }
+
+  // Show inauguration overlay after loading
+  if (showInauguration) {
+    return <InaugurationOverlay onComplete={() => setShowInauguration(false)} />;
   }
 
   return (
