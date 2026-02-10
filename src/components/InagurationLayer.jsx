@@ -259,11 +259,7 @@ export default function InaugurationOverlay({ onComplete }) {
                   <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-2">
                     Grand Inauguration
                   </h2>
-                  <div className="flex items-center justify-center gap-3">
-                    <div className="h-1 w-16 bg-gradient-to-r from-transparent to-yellow-600 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-600 rounded-full rotate-45"></div>
-                    <div className="h-1 w-16 bg-gradient-to-l from-transparent to-yellow-600 rounded-full"></div>
-                  </div>
+                 
                   <p className="text-xl sm:text-2xl text-gray-600 font-light pt-2">
                     Click the scissors to unveil our journey
                   </p>
