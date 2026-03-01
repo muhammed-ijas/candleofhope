@@ -112,42 +112,42 @@ export default function Projects() {
         }
       ]
     },
-    {
-      name: "Youth Upskilling",
-      projects: [
-        {
-          id: 5,
-          title: "Samsi 2.0 – Model Community Project",
-          description: "A transformative initiative aimed at uplifting a marginalised snake-charmer community living in a slum area. The project focuses on education, health, livelihood, and social development to convert the colony into a sustainable, model community.",
-          icon: Building2,
-          images: ['/project5a.png', '/project5b.png', '/project5c.png', '/project5d.png']
-        },
-        {
-          id: null,
-          title: "Coming Soon",
-          description: "",
-          icon: Building2,
-          images: [],
-          isPlaceholder: true
-        },
-        {
-          id: null,
-          title: "Coming Soon",
-          description: "",
-          icon: Building2,
-          images: [],
-          isPlaceholder: true
-        },
-        {
-          id: null,
-          title: "Coming Soon",
-          description: "",
-          icon: Building2,
-          images: [],
-          isPlaceholder: true
-        }
-      ]
-    }
+    // {
+    //   name: "Youth Upskilling",
+    //   projects: [
+    //     {
+    //       id: 5,
+    //       title: "Samsi 2.0 – Model Community Project",
+    //       description: "A transformative initiative aimed at uplifting a marginalised snake-charmer community living in a slum area. The project focuses on education, health, livelihood, and social development to convert the colony into a sustainable, model community.",
+    //       icon: Building2,
+    //       images: ['/project5a.png', '/project5b.png', '/project5c.png', '/project5d.png']
+    //     },
+    //     {
+    //       id: null,
+    //       title: "Coming Soon",
+    //       description: "",
+    //       icon: Building2,
+    //       images: [],
+    //       isPlaceholder: true
+    //     },
+    //     {
+    //       id: null,
+    //       title: "Coming Soon",
+    //       description: "",
+    //       icon: Building2,
+    //       images: [],
+    //       isPlaceholder: true
+    //     },
+    //     {
+    //       id: null,
+    //       title: "Coming Soon",
+    //       description: "",
+    //       icon: Building2,
+    //       images: [],
+    //       isPlaceholder: true
+    //     }
+    //   ]
+    // }
   ];
 
   // Find expanded project from all categories

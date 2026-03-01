@@ -8,11 +8,12 @@ function Hero() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   
   const images = [
-    '/image4.png',
-    '/image5.jpg',
-    '/image6.jpg',
-    '/image7.jpg',
-    '/image8.jpg',
+    // '/image4.png',
+    // '/image5.jpg',
+    // '/image6.jpg',
+    // '/image7.jpg',
+    // '/image8.jpg',
+    '/project1b.png', '/project2b.png', '/project2d.png',
   ];
 
   useEffect(() => {
