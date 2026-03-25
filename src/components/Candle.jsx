@@ -25,21 +25,20 @@ const fadeIn = (direction, delay) => {
 export default function CandleAnimation() {
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
   
-  const quotes = [
-    {
-      left: ["Spreading light,", "one community", "at a time"],
-      right: ["Empowering", "rural communities", "with hope"]
-    },
-    {
-      left: ["Igniting change,", "through education", "and compassion"],
-      right: ["Building futures,", "one village", "at a time"]
-    },
-    {
-      left: ["Transforming lives,", "with sustainable", "development"],
-      right: ["Creating pathways,", "to opportunity", "and growth"]
-    }
-  ];
-
+ const quotes = [
+  {
+    left: ["Reaching the unreached,", "where hope", "matters most"],
+    right: ["Empowering", "rural communities", "with hope and opportunity"]
+  },
+  {
+    left: ["Igniting change,", "through education", "and compassion"],
+    right: ["Transforming lives,", "through sustainable,", "lasting impact"]
+  },
+  {
+    left: ["Creating pathways,", "to opportunity", "and growth"],
+    right: ["Where opportunity", "begins in", "forgotten places"]
+  }
+];
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentQuoteIndex((prev) => (prev + 1) % quotes.length);

@@ -16,7 +16,7 @@ export default function Projects() {
           id: 1,
           title: "Foundation Learning Centres (FLC)",
           shortDesc: "Strengthening foundational learning in underserved rural communities.",
-          description: "Structured learning spaces that strengthen foundational literacy and numeracy for children and adults in isolated rural villages, using a level-based, personalised teaching approach.",
+          overview: "Structured learning spaces that strengthen foundational literacy and numeracy for children and adults in isolated rural villages, using a level-based, personalised teaching approach.",
           objective: "To strengthen foundational literacy and numeracy skills among children and adults in isolated rural villages through structured, personalised learning.",
           whoItServes: "Children and adults in underserved rural villages with limited access to quality education.",
           howItWorks: [
@@ -31,13 +31,13 @@ export default function Projects() {
           id: 7,
           title: "Teachers Training",
           shortDesc: "Empowering educators with skills to deliver quality and inclusive education.",
-          description: "Empowering educators with advanced teaching methodologies, modern pedagogical approaches, and skill-based training to improve educational quality in rural areas.",
-          objective: "To equip rural educators with modern teaching methodologies and inclusive pedagogical skills that elevate the quality of education.",
-          whoItServes: "Teachers and educators working in rural and semi-urban schools and learning centres.",
+          overview: "A capacity-building initiative aimed at equipping educators with modern teaching methodologies and practical skills to improve the quality of education in rural learning environments.",
+          objective: "To enhance teaching effectiveness and ensure quality, inclusive education in rural schools.",
+          whoItServes: "Rural teachers, community educators, and aspiring instructors.",
           howItWorks: [
-            "Structured training workshops covering modern pedagogical approaches and classroom management.",
-            "Hands-on skill-building sessions with practical demonstrations and peer learning.",
-            "Follow-up mentoring and support to help educators implement new methods effectively.",
+            "Training workshops and sessions.",
+            "Practical teaching methodologies.",
+            "Continuous mentoring and support.",
           ],
           icon: GraduationCap,
           images: ['/project7a.png', '/project7b.png', '/project7c.png', '/project7d.png'],
@@ -46,13 +46,13 @@ export default function Projects() {
           id: 8,
           title: "Career Compass",
           shortDesc: "Guiding rural youth towards higher education, career pathways, and life opportunities.",
-          description: "A structured career guidance initiative that helps rural students explore opportunities, understand higher education pathways, and make informed career decisions.",
-          objective: "To help rural students make informed decisions about their higher education and career pathways through structured guidance.",
-          whoItServes: "Rural students in secondary and higher secondary levels who lack access to career counselling.",
+          overview: "A guidance platform that supports rural youth in navigating higher education, career pathways, and life decisions through structured mentoring and exposure.",
+          objective: "To bridge the awareness gap and enable rural youth to access education and career opportunities.",
+          whoItServes: "Students and youth from rural and underserved backgrounds.",
           howItWorks: [
-            "One-on-one and group career counselling sessions to explore individual interests and aptitudes.",
-            "Exposure visits and interactions with professionals from various fields and industries.",
-            "Workshops on higher education options, entrance exams, scholarships, and application processes.",
+            "Regular updates on career informations.",
+            "Online and offline career guidance programs.",
+            "Mentorship and counseling.",
           ],
           icon: Zap,
           images: ['/project8a.png', '/project8b.png', '/project8c.png', '/project8d.png'],
@@ -61,13 +61,13 @@ export default function Projects() {
           id: 11,
           title: "Hope School",
           shortDesc: "Creating access to structured learning environments for marginalised children.",
-          description: "Hope School creates access to structured and supportive learning environments for marginalised children, ensuring continuity of education and fostering a nurturing space for holistic growth.",
-          objective: "To provide marginalised children with a safe, structured, and nurturing learning environment that ensures continuity of education.",
-          whoItServes: "Marginalised and out-of-school children from vulnerable and underserved communities.",
+          overview: "An initiative designed to transition of marginalized children from informal learning environments into structured formal education systems, ensuring access to quality academics and essential facilities.",
+          objective: "To provide marginalized children with access to structured schooling.",
+          whoItServes: "Children from marginalized communities.",
           howItWorks: [
-            "Establishing structured classroom environments with trained facilitators focused on holistic development.",
-            "Curriculum designed to bridge learning gaps and reintegrate children into mainstream education.",
-            "Psychosocial support and community engagement to ensure children's regular attendance and wellbeing.",
+            "Enrollment into formal schooling.",
+            "Scholarship support for those in need.",
+            "Continuous academic and personal development support.",
           ],
           icon: BookOpen,
           images: ['/project11a.png', '/project11b.png', '/project11c.png', '/project11d.png'],
@@ -76,14 +76,10 @@ export default function Projects() {
           id: 5,
           title: "Model Community Project",
           shortDesc: "Building education-focused community models that enable long-term transformation.",
-          description: "A transformative initiative aimed at uplifting a marginalised community. The project focuses on education, health, livelihood, and social development to build a sustainable, model community.",
-          objective: "To uplift an entire marginalised community by integrating education, health, livelihood, and social development into one cohesive model.",
-          whoItServes: "Marginalised communities in rural areas facing compounded challenges across education, health, and livelihood.",
-          howItWorks: [
-            "Comprehensive community needs assessment followed by a multi-sector intervention plan.",
-            "Coordinated delivery of education, healthcare, and livelihood programmes within the community.",
-            "Community leadership building to ensure the model is self-sustaining beyond the programme period.",
-          ],
+          overview: "A holistic development initiative that transforms a village into a model community by integrating education, livelihood, health, and social development programs.",
+          objective: "To create a replicable model of sustainable rural development at the community level.",
+          whoItServes: null,
+          howItWorks: null,
           icon: Building2,
           images: ['/project5a.png', '/project5b.png', '/project5c.png', '/project5d.png'],
         },
@@ -96,14 +92,10 @@ export default function Projects() {
           id: 12,
           title: "Self Help Groups (SHG)",
           shortDesc: "Strengthening community-based groups to promote collective growth.",
-          description: "Strengthening community-based self-help groups to promote collective financial planning, savings, and mutual support — enabling rural women and families to grow together sustainably.",
-          objective: "To strengthen rural self-help groups so women and families can achieve collective financial stability and mutual growth.",
-          whoItServes: "Rural women and families seeking financial inclusion, collective savings, and peer support networks.",
-          howItWorks: [
-            "Formation and capacity building of self-help groups with training on financial planning and savings.",
-            "Regular group meetings facilitated to encourage collective decision-making and accountability.",
-            "Linkage to microfinance, government schemes, and livelihood opportunities for sustained growth.",
-          ],
+          overview: "A community-based initiative that strengthens collective action by women that promote mutual support for community growth.",
+          objective: "Strengthen community resilience through collective activities.",
+          whoItServes: "Women from rural and marginalized communities.",
+          howItWorks: null,
           icon: Users,
           images: ['/project12a.png', '/project12b.png', '/project12c.png', '/project12d.png'],
         },
@@ -111,13 +103,12 @@ export default function Projects() {
           id: 3,
           title: "Skill Development Centre",
           shortDesc: "Practical, skill-based training to enhance employability and income opportunities.",
-          description: "The Skill Development Centre equips rural women and youth with practical, vocational skills — including tailoring and allied trades — enabling them to earn independently and build sustainable livelihoods.",
-          objective: "To equip rural women and youth with vocational skills that enable independent earning and sustainable livelihoods.",
-          whoItServes: "Rural women and youth seeking employable, income-generating vocational skills.",
+          overview: "A training initiative that equips individuals with practical and vocational skills to improve employability and create income-generating opportunities.",
+          objective: "To bridge the skill gap and enable individuals to access sustainable livelihood opportunities.",
+          whoItServes: "Unemployed youth, women, and individuals seeking skill-based opportunities.",
           howItWorks: [
-            "Hands-on vocational training in tailoring, allied trades, and market-relevant skill areas.",
-            "Certification on course completion to enhance employability and credibility in the job market.",
-            "Post-training support including placement assistance and links to self-employment opportunities.",
+            "Hands-on vocational training.",
+            "Industry-relevant skill development.",
           ],
           icon: Briefcase,
           images: ['/project3a.png', '/project3b.png', '/project3c.png', '/project3d.png'],
@@ -126,13 +117,13 @@ export default function Projects() {
           id: 13,
           title: "Learn to Lead",
           shortDesc: "Developing leadership, communication, and life skills among rural graduates.",
-          description: "A leadership development programme that builds communication, problem-solving, and life skills among rural youth and graduates — preparing them to become agents of change in their communities.",
-          objective: "To build leadership, communication, and life skills in rural graduates so they can drive change in their own communities.",
-          whoItServes: "Rural youth and graduates who have the potential to lead but lack confidence and structured development.",
+          overview: "A leadership development program designed to equip rural youth and graduates with essential skills for personal growth and community engagement.",
+          objective: "To develop future leaders who can contribute to community growth and social change.",
+          whoItServes: "Rural youth, students, and graduates.",
           howItWorks: [
-            "Structured workshops on communication, problem-solving, teamwork, and emotional intelligence.",
-            "Real-world community projects where participants apply leadership skills in practical scenarios.",
-            "Mentorship and networking opportunities with experienced leaders and change-makers.",
+            "Leadership and personality development sessions.",
+            "Communication and life skills training.",
+            "Mentorship and guided learning.",
           ],
           icon: GraduationCap,
           images: ['/project13a.png', '/project13b.png', '/project13c.png', '/project13d.png'],
@@ -141,14 +132,10 @@ export default function Projects() {
           id: 14,
           title: "ROOT'ed",
           shortDesc: "An immersive rural internship connecting students with real community challenges.",
-          description: "ROOT'ed is an immersive rural internship experience that connects students and young professionals with real grassroots challenges, fostering empathy, social awareness, and community-driven innovation.",
-          objective: "To connect students and young professionals with grassroots realities, fostering empathy and community-driven thinking.",
-          whoItServes: "Students and young professionals from urban backgrounds seeking meaningful rural exposure.",
-          howItWorks: [
-            "Immersive rural placements where interns live and work within communities for a defined period.",
-            "Guided observation and engagement with local challenges across education, health, and livelihood.",
-            "Structured reflection sessions and project submissions to consolidate learnings and propose solutions.",
-          ],
+          overview: "An immersive internship program that connects students with rural communities, enabling them to understand grassroots realities and contribute through innovative ideas and solutions.",
+          objective: "To foster experiential learning and inspire youth to engage in community-driven development.",
+          whoItServes: "Students and young individuals interested in social impact and rural development.",
+          howItWorks: null,
           icon: Zap,
           images: ['/project14a.png', '/project14b.png', '/project14c.png', '/project14d.png'],
         },
@@ -156,10 +143,14 @@ export default function Projects() {
           id: null,
           title: "Industry Connect Program (ICP)",
           shortDesc: "Creating pathways between rural talent and industry opportunities.",
-          description: "Industry experts from diverse sectors visit rural training institutions to identify skilled youth. Partner firms offer hands-on training that helps learners gain industrial exposure and refine their competencies.",
-          objective: "",
-          whoItServes: "",
-          howItWorks: [],
+          overview: "A future initiative aimed at bridging the gap between rural talent and industry by creating pathways for employment, exposure, and skill alignment.",
+          objective: "To connect skilled individuals from rural communities with relevant industry opportunities.",
+          whoItServes: "Skilled youth and job seekers from rural backgrounds.",
+          howItWorks: [
+            "Industry partnerships.",
+            "Placement support and guidance.",
+            "Skill alignment with market needs.",
+          ],
           icon: Briefcase,
           images: [],
           isPlaceholder: true,
@@ -169,10 +160,10 @@ export default function Projects() {
           id: null,
           title: "Mobile Repairing Centre",
           shortDesc: "Technical skill training to create sustainable livelihood opportunities.",
-          description: "Offering technical skill training in mobile phone repair and electronics servicing to create sustainable, self-employment livelihood opportunities for rural youth.",
-          objective: "",
-          whoItServes: "",
-          howItWorks: [],
+          overview: null,
+          objective: null,
+          whoItServes: null,
+          howItWorks: null,
           icon: Wrench,
           images: [],
           isPlaceholder: true,
@@ -187,14 +178,10 @@ export default function Projects() {
           id: 2,
           title: "Project Jeevan Jyothi",
           shortDesc: "Promoting community health through awareness, support, and targeted health initiatives.",
-          description: "A rural community-oriented awareness initiative conducted in collaboration with local organisations, addressing health, education, welfare, and social development issues in underserved villages.",
-          objective: "To raise health and social awareness in underserved rural villages through collaborative, community-oriented initiatives.",
-          whoItServes: "Residents of underserved rural villages facing compounded health, education, and welfare challenges.",
-          howItWorks: [
-            "Awareness campaigns conducted in collaboration with local organisations and village leaders.",
-            "Interactive sessions on health, hygiene, education, and social welfare tailored to community needs.",
-            "Follow-up support and referrals connecting community members to relevant services and resources.",
-          ],
+          overview: "A community health initiative focused on improving awareness, access, and promoting better health practices in rural communities.",
+          objective: null,
+          whoItServes: null,
+          howItWorks: null,
           icon: Heart,
           images: ['/project2a.png', '/project2b.png', '/project2c.png', '/project2d.png'],
         },
@@ -202,13 +189,13 @@ export default function Projects() {
           id: 4,
           title: "Monthly Medical Camp",
           shortDesc: "Accessible healthcare services and medical support in underserved rural areas.",
-          description: "Regular medical camps offering free consultations, basic check-ups, medicines, and health awareness sessions for underserved rural families — bringing healthcare closer to the community.",
-          objective: "To bring essential healthcare services directly to underserved rural families through regular, free medical camps.",
-          whoItServes: "Rural families and individuals who lack access to affordable or nearby healthcare facilities.",
+          overview: "A monthly healthcare initiative that provides basic medical services and consultations to underserved rural populations.",
+          objective: null,
+          whoItServes: "Individuals and families in rural and underserved areas.",
           howItWorks: [
-            "Monthly camps set up in accessible village locations with qualified medical professionals.",
-            "Free consultations, basic diagnostic check-ups, and distribution of essential medicines.",
-            "Health awareness sessions on preventive care, nutrition, hygiene, and common illnesses.",
+            "Regular medical camps in villages.",
+            "Basic check-ups and consultations.",
+            "Distribution of essential medicines.",
           ],
           icon: Heart,
           images: ['/project4a.png', '/project4b.png', '/project4c.png', '/project4d.png'],
@@ -217,13 +204,13 @@ export default function Projects() {
           id: 15,
           title: "Medicare Support",
           shortDesc: "Assisting individuals with access to basic medical needs and essential care.",
-          description: "Medicare Support assists individuals and families in accessing basic medical needs, essential medicines, and health services — bridging gaps in rural healthcare access.",
-          objective: "To bridge gaps in rural healthcare access by connecting individuals and families to essential medical support.",
-          whoItServes: "Vulnerable individuals and families in rural areas who cannot afford or access basic medical care.",
+          overview: "A support initiative that assists individuals in accessing essential medical care, treatment, and basic health resources.",
+          objective: null,
+          whoItServes: "Economically vulnerable individuals requiring medical assistance.",
           howItWorks: [
-            "Identification of individuals in need through community outreach and self-referral mechanisms.",
-            "Facilitation of access to medicines, diagnostic services, and specialist referrals where needed.",
-            "Ongoing follow-up to monitor health outcomes and provide continued support as required.",
+            "Support for basic medical needs.",
+            "Assistance in accessing treatment.",
+            "Emergency and need-based interventions.",
           ],
           icon: Heart,
           images: ['/project15a.png', '/project15b.png', '/project15c.png', '/project15d.png'],
@@ -237,14 +224,10 @@ export default function Projects() {
           id: 16,
           title: "Dress Distribution",
           shortDesc: "Supporting children and families with essential clothing during key occasions.",
-          description: "Supporting children and families with essential clothing, especially during key occasions and festive seasons — restoring dignity and spreading warmth in marginalised communities.",
-          objective: "To restore dignity and warmth in marginalised communities by providing essential clothing during key occasions.",
-          whoItServes: "Children and families in marginalised communities who cannot afford clothing for daily needs or festive occasions.",
-          howItWorks: [
-            "Identification of beneficiary families through community surveys and partner organisation referrals.",
-            "Collection and curation of quality clothing items suitable for the target age groups and seasons.",
-            "Organised distribution events held during festive seasons or key community occasions.",
-          ],
+          overview: "A welfare initiative that provides essential clothing to children and families, especially during festive occasions and seasonal needs.",
+          objective: null,
+          whoItServes: null,
+          howItWorks: null,
           icon: Users,
           images: ['/project16a.png', '/project16b.png', '/project16c.png', '/project16d.png'],
         },
@@ -252,14 +235,10 @@ export default function Projects() {
           id: 6,
           title: "Food Kit Distribution",
           shortDesc: "Ensuring food security for vulnerable households through timely support.",
-          description: "Ensuring food security for vulnerable households through timely distribution of food kits — supporting children's school attendance and strengthening family resilience in times of need.",
-          objective: "To ensure food security for vulnerable households and support children's school attendance through timely food kit distribution.",
-          whoItServes: "Vulnerable households and families facing food insecurity, especially those with school-going children.",
-          howItWorks: [
-            "Identification of food-insecure households through community assessments and local partner networks.",
-            "Assembly of nutritionally balanced food kits with essential dry rations and household staples.",
-            "Timely distribution at community centres or doorstep delivery for immobile or elderly beneficiaries.",
-          ],
+          overview: "A relief initiative aimed at addressing food insecurity by distributing essential food kits to vulnerable households.",
+          objective: null,
+          whoItServes: null,
+          howItWorks: null,
           icon: Users,
           images: ['/project6a.png', '/project6b.png', '/project6c.png', '/project6d.png'],
         },
@@ -267,14 +246,10 @@ export default function Projects() {
           id: 17,
           title: "Study Kit Distribution",
           shortDesc: "Providing essential learning materials to support children's continuity in education.",
-          description: "Providing essential learning materials — notebooks, stationery, and school supplies — to support children's education continuity, especially in families that cannot afford basic study resources.",
-          objective: "To support children's educational continuity by providing essential study materials to families that cannot afford them.",
-          whoItServes: "School-going children from low-income families who lack access to basic study resources.",
-          howItWorks: [
-            "Assessment of need through school partnerships and community outreach to identify eligible children.",
-            "Procurement and packaging of quality study kits including notebooks, stationery, and school supplies.",
-            "Distribution at the start of the academic year to ensure children are ready and equipped to learn.",
-          ],
+          overview: "An educational support initiative that provides essential learning materials to children, enabling them to continue their education without barriers.",
+          objective: "To support children's learning by ensuring access to basic educational resources.",
+          whoItServes: "School-going children from marginalized communities.",
+          howItWorks: null,
           icon: BookOpen,
           images: ['/project17a.png', '/project17b.png', '/project17c.png', '/project17d.png'],
         },
@@ -315,10 +290,6 @@ export default function Projects() {
   return (
     <div className="relative min-h-screen bg-white py-16 sm:py-20 lg:py-24 overflow-hidden">
       <style>{`
-        @keyframes slideUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
         @keyframes modalSlideIn {
           from { opacity: 0; transform: scale(0.95); }
           to   { opacity: 1; transform: scale(1); }
@@ -412,12 +383,9 @@ export default function Projects() {
                           </>
                         ) : (
                           <>
-                            {/* Icon */}
                             <div className="w-9 h-9 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                               <IconComponent className="w-5 h-5 text-white" />
                             </div>
-
-                            {/* Title + Short Desc */}
                             <div>
                               <h4 className="text-white font-bold text-sm leading-snug mb-1.5 line-clamp-2">
                                 {project.title}
@@ -429,7 +397,6 @@ export default function Projects() {
                           </>
                         )}
 
-                        {/* Decorative corner */}
                         {!project.isPlaceholder && (
                           <div className="absolute top-0 right-0 w-0 h-0 border-t-[28px] border-r-[28px] border-t-transparent border-r-white/10"></div>
                         )}
@@ -438,6 +405,7 @@ export default function Projects() {
                   );
                 })}
               </div>
+
             </div>
           ))}
         </div>
@@ -464,11 +432,9 @@ export default function Projects() {
 
             {/* Modal Header */}
             <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-3 sm:p-4 flex items-start justify-between flex-shrink-0">
-              <div className="flex-1 min-w-0">
-                <h2 className="text-base sm:text-xl font-bold truncate pr-2">
-                  {expandedData.title}
-                </h2>
-              </div>
+              <h2 className="text-base sm:text-xl font-bold truncate pr-2">
+                {expandedData.title}
+              </h2>
               <button
                 onClick={() => setExpandedProject(null)}
                 className="ml-2 p-1.5 hover:bg-white/20 rounded-lg transition-colors flex-shrink-0"
@@ -477,7 +443,7 @@ export default function Projects() {
               </button>
             </div>
 
-            {/* Modal Content */}
+            {/* Modal Body */}
             <div className="flex-1 flex flex-col lg:grid lg:grid-cols-2 gap-0 min-h-0 overflow-y-auto lg:overflow-hidden">
 
               {/* LEFT — Image Slider */}
@@ -534,47 +500,66 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* RIGHT — Structured Info */}
-              <div className="p-4 sm:p-6 flex flex-col justify-center bg-white lg:overflow-y-auto">
+              {/* RIGHT — Project Details */}
+              <div className="p-4 sm:p-6 flex flex-col justify-start bg-white lg:overflow-y-auto">
                 <div className="space-y-4">
 
-                  {/* Objective */}
-                  <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-gray-900 mb-1 flex items-center gap-2">
-                      <div className="w-1 h-4 bg-gradient-to-b from-red-600 to-red-700 rounded-full"></div>
-                      Objective
-                    </h3>
-                    <p className="text-gray-700 leading-relaxed text-xs sm:text-sm pl-3">
-                      {expandedData.objective}
-                    </p>
-                  </div>
+                  {/* Project Overview — always shown */}
+                  {expandedData.overview && (
+                    <div>
+                      <h3 className="text-xs sm:text-sm font-bold text-gray-900 mb-1 flex items-center gap-2">
+                        <div className="w-1 h-4 bg-gradient-to-b from-red-600 to-red-700 rounded-full flex-shrink-0"></div>
+                        Project Overview
+                      </h3>
+                      <p className="text-gray-700 leading-relaxed text-xs sm:text-sm pl-3">
+                        {expandedData.overview}
+                      </p>
+                    </div>
+                  )}
 
-                  {/* Who It Serves */}
-                  <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-gray-900 mb-1 flex items-center gap-2">
-                      <div className="w-1 h-4 bg-gradient-to-b from-red-600 to-red-700 rounded-full"></div>
-                      Who It Serves
-                    </h3>
-                    <p className="text-gray-700 leading-relaxed text-xs sm:text-sm pl-3">
-                      {expandedData.whoItServes}
-                    </p>
-                  </div>
+                  {/* Objective — only if provided */}
+                  {expandedData.objective && (
+                    <div>
+                      <h3 className="text-xs sm:text-sm font-bold text-gray-900 mb-1 flex items-center gap-2">
+                        <div className="w-1 h-4 bg-gradient-to-b from-red-600 to-red-700 rounded-full flex-shrink-0"></div>
+                        Objective
+                      </h3>
+                      <p className="text-gray-700 leading-relaxed text-xs sm:text-sm pl-3">
+                        {expandedData.objective}
+                      </p>
+                    </div>
+                  )}
 
-                  {/* How It Works */}
-                  <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-gray-900 mb-2 flex items-center gap-2">
-                      <div className="w-1 h-4 bg-gradient-to-b from-red-600 to-red-700 rounded-full"></div>
-                      How It Works
-                    </h3>
-                    <ul className="space-y-2 pl-3">
-                      {expandedData.howItWorks.map((point, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-red-600"></span>
-                          <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">{point}</p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {/* Who It Serves — only if provided */}
+                  {expandedData.whoItServes && (
+                    <div>
+                      <h3 className="text-xs sm:text-sm font-bold text-gray-900 mb-1 flex items-center gap-2">
+                        <div className="w-1 h-4 bg-gradient-to-b from-red-600 to-red-700 rounded-full flex-shrink-0"></div>
+                        Who It Serves
+                      </h3>
+                      <p className="text-gray-700 leading-relaxed text-xs sm:text-sm pl-3">
+                        {expandedData.whoItServes}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* How It Works — only if provided */}
+                  {expandedData.howItWorks && expandedData.howItWorks.length > 0 && (
+                    <div>
+                      <h3 className="text-xs sm:text-sm font-bold text-gray-900 mb-2 flex items-center gap-2">
+                        <div className="w-1 h-4 bg-gradient-to-b from-red-600 to-red-700 rounded-full flex-shrink-0"></div>
+                        How It Works
+                      </h3>
+                      <ul className="space-y-2 pl-3">
+                        {expandedData.howItWorks.map((point, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-red-600"></span>
+                            <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">{point}</p>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
                 </div>
               </div>

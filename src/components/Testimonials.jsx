@@ -90,7 +90,7 @@ export default function Testimonials() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-12 lg:py-16 overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-orange-900"
+      className="relative py-12 lg:py-16 overflow-hidden"
     >
       <style>{`
         @keyframes float {
@@ -122,11 +122,11 @@ export default function Testimonials() {
           viewport={{ once: true, margin: "-100px 0px -100px 0px" }}
           className="max-w-3xl mx-auto text-center mb-8"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-white mb-3">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight  mb-3">
             Testimonials
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-amber-300 via-orange-300 to-amber-300 rounded-full mx-auto mb-4"></div>
-          <p className="text-sm sm:text-base text-amber-50/90">
+          <div className="w-20 h-1 bg-gradient-to-r from-amber-800 via-orange-800 to-amber-900 rounded-full mx-auto mb-4"></div>
+          <p className="text-sm sm:text-base ">
             Real voices from the communities we serve
           </p>
         </motion.div>

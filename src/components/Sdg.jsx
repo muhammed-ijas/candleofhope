@@ -36,8 +36,7 @@ function SDG() {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-red-600 via-red-500 to-pink-500 rounded-full mx-auto mb-4"></div>
           <p className="text-sm text-gray-600 max-w-2xl mx-auto">
-            Aligning our initiatives with the UN Sustainable Development Goals
-          </p>
+Our initiatives directly contribute to key Sustainable Development Goals, addressing critical challenges in education, health, livelihoods, and inequality          </p>
         </motion.div>
 
         {/* SDG Images Grid - 5 columns */}

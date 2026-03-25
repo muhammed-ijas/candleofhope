@@ -14,6 +14,7 @@ import Donate from "./pages/Donate";
 import Events from "./pages/Events";
 import Gallery from "./pages/Gallery";
 import CoreTeam from "./pages/CoreTeam";
+import BeAPart from "./components/JoinUs";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -86,6 +87,7 @@ function App() {
             <Route path="/events" element={<Events />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/coreTeam" element={<CoreTeam />} />
+            <Route path="/beAPart" element={<BeAPart />} />
           </Routes>
         </main>
         <Footer />

@@ -87,6 +87,17 @@ function Header() {
                 }`}></span>
               </Link>
               <Link 
+                to="/beAPart" 
+                className={`transition-all duration-300 font-medium relative group py-1 text-sm ${
+                  isActive('/beAPart') ? 'text-red-600' : 'text-gray-700 hover:text-red-600'
+                }`}
+              >
+                Be A Part
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-red-600 transition-all duration-300 ${
+                  isActive('/beAPart') ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
+              </Link>
+              <Link 
                 to="/events" 
                 className={`transition-all duration-300 font-medium relative group py-1 text-sm ${
                   isActive('/events') ? 'text-red-600' : 'text-gray-700 hover:text-red-600'
@@ -219,6 +230,17 @@ function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Join Us
+              </Link>
+              <Link 
+                to="/beAPart" 
+                className={`transition-all duration-300 font-medium py-3 px-4 rounded-lg text-sm ${
+                  isActive('/beAPart') 
+                    ? 'bg-red-100 text-red-700' 
+                    : 'text-gray-700 hover:text-red-600 hover:bg-red-50'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Be A Part
               </Link>
               <Link 
                 to="/events" 

@@ -5,7 +5,6 @@
   import Projects from '../components/Projects';
   import Candle from '../components/Candle';
   import Testimonials from '../components/Testimonials';
-  import JoinUs from '../components/JoinUs';
   import ContactUs from '../components/ContactUs';
   import Sdg from '../components/Sdg';
 
@@ -21,7 +20,6 @@
         <Candle />
         <Testimonials />
         
-        <JoinUs />
         <ContactUs />
 
       </div>

@@ -5,65 +5,48 @@ import { fadeIn } from "../Varients";
 export default function JoinUs() {
   const [hoveredCard, setHoveredCard] = useState(null);
 
-  const joinOptions = [
-    {
-      id: 1,
-      number: "01",
-      title: "Donate",
-      description:
-        "Support our mission through donations, with full eligibility for 80G tax benefits. Your contribution helps expand education, skill development, health services, and community upliftment to the most underserved villages.",
-      gradient: "from-red-600 to-red-700",
-    },
-    {
-      id: 2,
-      number: "02",
-      title: "Share Your Expertise",
-      description:
-        "Contribute your expertise and mentorship to empower communities. Your professional knowledge can help shape better futures for rural families across East and Northeast India.",
-      gradient: "from-orange-600 to-orange-700",
-    },
-    {
-      id: 3,
-      number: "03",
-      title: "CSR Partnership",
-      description:
-        "Partner with us through CSR to scale sustainable projects in education, health, skills, and community development. Create meaningful corporate social impact that transforms lives.",
-      gradient: "from-amber-600 to-amber-700",
-    },
-    {
-      id: 4,
-      number: "04",
-      title: "Sponsor & Adopt",
-      description:
-        "Sponsor a child or classroom, and adopt a village to ensure continuous learning for marginalized students, helping transform it into a thriving, self-reliant community.",
-      gradient: "from-red-500 to-orange-600",
-    },
-    {
-      id: 5,
-      number: "05",
-      title: "Institutional Support",
-      description:
-        "Extend your institutional expertise to amplify impact across communities. Collaborate with us to bring innovative solutions to grassroots challenges.",
-      gradient: "from-orange-500 to-red-600",
-    },
-    {
-      id: 6,
-      number: "06",
-      title: "Volunteer & Intern",
-      description:
-        "Become a volunteer, intern, or join our team to contribute to meaningful change on the ground. Experience the joy of direct community engagement and transformation.",
-      gradient: "from-red-600 to-amber-600",
-    },
-    {
-      id: 7,
-      number: "07",
-      title: "Connect Networks",
-      description:
-        "Link us with like-minded well-wishers and networks who can share in this vision. Help us expand our reach and multiply our impact through strategic connections.",
-      gradient: "from-amber-600 to-orange-600",
-    },
-  ];
-
+ const joinOptions = [
+  {
+    id: 1,
+    number: "01",
+    title: "Donate",
+    description:
+      "Support our mission by contributing to education, health, and livelihood initiatives in underserved rural communities, which helps to create opportunities and lasting impact where it is most needed.",
+    gradient: "from-red-600 to-red-700",
+  },
+  {
+    id: 2,
+    number: "02",
+    title: "Sponsor / Adopt",
+    description:
+      "Sponsor a child, classroom, or village to ensure continuous learning and long-term community development, building a future of dignity, education, and self-reliance.",
+    gradient: "from-orange-600 to-orange-700",
+  },
+  {
+    id: 3,
+    number: "03",
+    title: "Partner with Us",
+    description:
+      "Collaborate with us through CSR or institutional partnerships to scale sustainable and impactful initiatives. Together, we can create meaningful change across communities.",
+    gradient: "from-amber-600 to-amber-700",
+  },
+  {
+    id: 4,
+    number: "04",
+    title: "Volunteer / Intern",
+    description:
+      "Be part of our on-ground initiatives by contributing your time, skills, and passion. Experience the impact of grassroots work while helping transform lives.",
+    gradient: "from-red-500 to-orange-600",
+  },
+  {
+    id: 5,
+    number: "05",
+    title: "Share Your Expertise",
+    description:
+      "Use your knowledge and professional skills to mentor, guide, and support our programs. Your expertise can help strengthen initiatives and empower communities more effectively.",
+    gradient: "from-orange-500 to-red-600",
+  },
+];
   return (
     <section className="relative min-h-screen py-16 sm:py-20 lg:py-24 overflow-hidden bg-white">
       {/* Animations */}
@@ -165,9 +148,9 @@ export default function JoinUs() {
             }}
             className="text-3xl sm:text-4xl lg:text-5xl  font-bold leading-tight text-gray-900 mb-8"
           >
-            Join Us in <br />
+            Be a Part of <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-orange-600 to-amber-600">
-              Creating Change
+              The Change
             </span>
           </motion.h2>
 
@@ -185,11 +168,7 @@ export default function JoinUs() {
               "
             </div>
             <p className="text-base sm:text-base text-gray-700 leading-relaxed px-8">
-              Candle of Hope welcomes individuals, organisations, and
-              institutions to partner with us in transforming rural communities
-              across East and Northeast India. Your support helps expand
-              education, strengthen health systems, empower women and youth, and
-              uplift marginalised families.
+             Candle of Hope invites individuals, organizations, and institutions to join hands in transforming rural communities across East and Northeast India. Your support helps expand education, strengthen livelihoods, improve health, and uplift marginalized families.
             </p>
             <div className="absolute -right-4 bottom-0 text-red-200 text-6xl font-serif">
               "
@@ -249,28 +228,7 @@ export default function JoinUs() {
                         {option.description}
                       </p>
 
-                      {/* Animated Arrow */}
-                      <div className="mt-4 flex items-center gap-3">
-                        <span className="text-xs font-bold text-red-600 group-hover:text-white transition-colors duration-500">
-                          Learn More
-                        </span>
-                        <div className="w-0 group-hover:w-10 h-px bg-white transition-all duration-500"></div>
-                        <div className="transform translate-x-0 group-hover:translate-x-2 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                          <svg
-                            className="w-4 h-4 text-white"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={3}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                      </div>
+                     
                     </div>
                   </div>
 
