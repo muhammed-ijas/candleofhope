@@ -14,7 +14,7 @@ const coreValues = [
     hoverBg: "from-red-50",
     hoverText: "group-hover:text-red-600",
     title: "Education as Empowerment",
-    desc: "Foundation for dignity & opportunity",
+    desc: "We believe education is the foundation for dignity, opportunity, and long-term transformation.",
   },
   {
     icon: (
@@ -27,7 +27,7 @@ const coreValues = [
     hoverBg: "from-green-50",
     hoverText: "group-hover:text-green-600",
     title: "Transformative Impact",
-    desc: "Uplifting entire communities",
+    desc: "We are committed to creating meaningful change that uplifts entire communities and builds a better future.",
   },
   {
     icon: (
@@ -40,7 +40,7 @@ const coreValues = [
     hoverBg: "from-amber-50",
     hoverText: "group-hover:text-amber-600",
     title: "Sustainability",
-    desc: "Communities growing independently",
+    desc: "Our initiatives are designed to create lasting impact, enabling communities to grow independently.",
   },
   {
     icon: (
@@ -53,7 +53,7 @@ const coreValues = [
     hoverBg: "from-pink-50",
     hoverText: "group-hover:text-pink-600",
     title: "Dignity & Inclusion",
-    desc: "Every individual seen & heard",
+    desc: "We respect every individual and ensure that even the most marginalized are seen, heard, and empowered.",
   },
   {
     icon: (
@@ -66,7 +66,7 @@ const coreValues = [
     hoverBg: "from-red-50",
     hoverText: "group-hover:text-red-700",
     title: "Integrity & Commitment",
-    desc: "Transparency & accountability",
+    desc: "We uphold transparency, accountability, and unwavering dedication in all our actions.",
   },
 ];
 
@@ -147,13 +147,8 @@ function AboutUs() {
 
                   {/* Label row */}
                   <div className="flex items-center gap-3 mb-3 relative z-10">
-                    <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0 shadow-md">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                      </svg>
-                    </div>
-                    <span className="text-sm font-bold text-red-600 tracking-widest uppercase">Our Vision</span>
+                    
+                    <span className="text-base sm:text-sm  md:text-base font-bold text-red-600 tracking-widest uppercase">Vision</span>
                   </div>
 
                   <div className="w-12 h-0.5 bg-gradient-to-r from-red-400 to-transparent mb-4 relative z-10"></div>
