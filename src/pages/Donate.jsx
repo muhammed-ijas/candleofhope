@@ -202,7 +202,7 @@ export default function DonatePage() {
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">80G Tax Exemption</h3>
                 <p className="text-xs text-gray-600 leading-relaxed">
-                  All donations are eligible for 80G tax exemption under Indian Income Tax Act.
+                  Donations are eligible for  tax exemption under Section 80G.
                 </p>
               </div>
             </div>

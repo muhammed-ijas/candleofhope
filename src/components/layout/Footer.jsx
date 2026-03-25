@@ -14,7 +14,7 @@ function Footer() {
               className="h-16 w-auto mb-4 bg-white p-2 rounded-lg"
             />
             <p className="text-sm leading-relaxed text-amber-100/70">
-              Candle of Hope International - Registered as a Non-Profit Organisation under the Indian Trusts Registration Act, 1860
+              Candle of Hope International - Registered as a Non-Profit Organisation under the Indian Trusts  Act, 1860
             </p>
           </div>
 
