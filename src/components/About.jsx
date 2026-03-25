@@ -88,15 +88,15 @@ function AboutUs() {
             {/* Content Paragraphs */}
             <div className="space-y-6 text-gray-600 leading-relaxed">
               <p className="text-sm lg:text-base">
-                Fuelled by the passion and expertise of <span className="font-semibold text-red-900">young professionals</span>, Candle of Hope International (COHI) serves as a platform that unites socially committed individuals dedicated to rural transformation. Together, they bring their knowledge, skills, and innovative ideas to drive transformative, sustainable educational and social initiatives that create meaningful, lasting impact.
+               Candle of Hope International is a grassroots movement driven by passionate young professionals committed to transforming rural India. We work in some of the most underserved and isolated communities across East and Northeast India where access to education, opportunity, and basic development remains a challenge.
               </p>
 
               <p className="text-sm lg:text-base">
-                Registered as a non-profit under the <span className="font-semibold text-red-900">Trusts Registration Act of 1860</span>, COHI works at the grassroots level across East and Northeast India, uplifting rural communities through a diverse range of impactful programs.
+                Through transformative education and community-driven initiatives, we strive to bridge the gap between aspiration and opportunity, empowering individuals, strengthening communities, and creating pathways for sustainable growth and dignity.
               </p>
 
               <p className="text-sm lg:text-base">
-                Our initiatives are designed to address the challenges faced by underserved groups, serving as a <span className="font-semibold text-red-900">bridge between aspiration and opportunity</span>, and ensuring that transformation reaches even the most remote corners of India.
+                Registered under the Trusts Registration Act of 1860, our work is rooted in the belief that real change begins at the grassroots. Every initiative we undertake is designed to create meaningful, lasting impact in the lives of those who need it most.
               </p>
             </div>
 
