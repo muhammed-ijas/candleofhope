@@ -31,10 +31,10 @@ function AreasOfWork() {
 
   const targetAudience = [
     "Isolated Rural Communities",
-    "School Dropouts & Out-of-School Children from Underprivileged Communities",
+    " Out-of-school children and school dropouts",
     "Unemployed & Under-skilled Youth",
-    "Women in Marginalised Communities",
-    "Rural Teachers & Educators"
+    "Women from Marginalised Communities",
+    "Rural educators and community leaders"
   ];
 
   useEffect(() => {
