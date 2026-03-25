@@ -137,13 +137,10 @@ function AreasOfWork() {
             <div className="space-y-6">
               {/* Header */}
               <div className="text-left mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 rounded-full border border-red-200 mb-4">
-                  <div className="w-2 h-2 bg-gradient-to-r from-red-400 to-orange-300 rounded-full animate-pulse"></div>
-                  <span className="text-xs font-semibold text-red-900 tracking-wide uppercase">What We Do</span>
-                </div>
+              
 
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-gray-900 mb-3">
-                  Areas of Work
+                  Our Areas of Impact
                 </h2>
                 <div className="w-20 h-1 bg-gradient-to-r from-red-400 via-orange-300 to-orange-400 rounded-full"></div>
               </div>
@@ -199,13 +196,10 @@ function AreasOfWork() {
             <div className="space-y-6 flex flex-col">
               {/* Header */}
               <div className="text-left mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 rounded-full border border-red-200 mb-4">
-                  <div className="w-2 h-2 bg-gradient-to-r from-red-400 to-orange-300 rounded-full animate-pulse"></div>
-                  <span className="text-xs font-semibold text-red-900 tracking-wide uppercase">Who We Serve</span>
-                </div>
+                
 
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-gray-900 mb-3">
-                  Targeted Audience
+                  Who We Serve
                 </h2>
                 <div className="w-20 h-1 bg-gradient-to-r from-red-400 via-orange-300 to-orange-400 rounded-full"></div>
               </div>
