@@ -112,7 +112,7 @@ function Vision() {
           </div>
 
           {/* Subtitle/Mission */}
-          <p className="text-lg sm:text-xl text-gray-100 font-light leading-relaxed">
+          <p className="text-sm sm:text-sm md:text-base text-gray-100 font-light leading-relaxed">
             Uplift rural villages through transformative, sustainable educational and social initiatives that empower communities to realise their potential and create a lasting impact.
           </p>
         </motion.div>

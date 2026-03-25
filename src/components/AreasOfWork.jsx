@@ -10,22 +10,22 @@ function AreasOfWork() {
     {
       id: 1,
       title: "Education & Literacy",
-      description: "Strengthening foundational learning through community-based literacy programs, Foundation Learning Centres, and age-appropriate teaching approaches aligned with national education missions."
+      description: "Expanding access to quality education and strengthening foundational learning enabling children and learners to build skills, confidence, and a pathway to a better future."
     },
     {
       id: 2,
       title: "Livelihood & Youth Upskilling",
-      description: "Providing vocational training and practical skill-building opportunities that enhance employability, support income generation, and promote economic resilience in rural households."
+      description: "Empowering individuals with skills and opportunities to build sustainable livelihoods, promoting income generation and employability."
     },
     {
       id: 3,
       title: "Health & Wellbeing",
-      description: "Improving community health through medical camps, awareness programs, maternal and menstrual health sessions, and initiatives supporting disability inclusion and preventive care."
+      description: "Promoting healthier communities through awareness, preventive care, and improved access to essential health support."
     },
     {
       id: 4,
-      title: "Humanitarian and Welfare Programmes",
-      description: "Equipping young people with digital skills, leadership training, communication development, and STEM learning to prepare them for future opportunities."
+      title: "Humanitarian & Welfare",
+      description: "Responding to the needs of vulnerable communities through support initiatives that ensure dignity, security, and opportunities for growth."
     }
   ];
 
