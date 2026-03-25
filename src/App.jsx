@@ -13,6 +13,7 @@ import JoinUs from "./pages/JoinUs";
 import Donate from "./pages/Donate";
 import Events from "./pages/Events";
 import Gallery from "./pages/Gallery";
+import CoreTeam from "./pages/CoreTeam";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -84,6 +85,7 @@ function App() {
             <Route path="/donate" element={<Donate />} />
             <Route path="/events" element={<Events />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/coreTeam" element={<CoreTeam />} />
           </Routes>
         </main>
         <Footer />

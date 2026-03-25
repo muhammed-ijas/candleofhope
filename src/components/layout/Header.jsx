@@ -43,14 +43,14 @@ function Header() {
                 }`}></span>
               </Link>
               <Link 
-                to="/vision" 
+                to="/coreTeam" 
                 className={`transition-all duration-300 font-medium relative group py-1 text-sm ${
-                  isActive('/vision') ? 'text-red-600' : 'text-gray-700 hover:text-red-600'
+                  isActive('/coreTeam') ? 'text-red-600' : 'text-gray-700 hover:text-red-600'
                 }`}
               >
-                Vision
+                Core Team
                 <span className={`absolute bottom-0 left-0 h-0.5 bg-red-600 transition-all duration-300 ${
-                  isActive('/vision') ? 'w-full' : 'w-0 group-hover:w-full'
+                  isActive('/coreTeam') ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
               <Link 
@@ -177,15 +177,15 @@ function Header() {
                 Home
               </Link>
               <Link 
-                to="/vision" 
+                to="/coreTeam" 
                 className={`transition-all duration-300 font-medium py-3 px-4 rounded-lg text-sm ${
-                  isActive('/vision') 
+                  isActive('/coreTeam') 
                     ? 'bg-red-100 text-red-700' 
                     : 'text-gray-700 hover:text-red-600 hover:bg-red-50'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Vision
+                Core Team
               </Link>
               <Link 
                 to="/projects" 

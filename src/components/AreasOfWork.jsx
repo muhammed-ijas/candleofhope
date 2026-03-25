@@ -14,7 +14,7 @@ function AreasOfWork() {
     },
     {
       id: 2,
-      title: "Skill Development & Livelihood",
+      title: "Livelihood & Youth Upskilling",
       description: "Providing vocational training and practical skill-building opportunities that enhance employability, support income generation, and promote economic resilience in rural households."
     },
     {
@@ -24,7 +24,7 @@ function AreasOfWork() {
     },
     {
       id: 4,
-      title: "Youth Upskilling",
+      title: "Humanitarian and Welfare Programmes",
       description: "Equipping young people with digital skills, leadership training, communication development, and STEM learning to prepare them for future opportunities."
     }
   ];

@@ -186,7 +186,7 @@ function Hero() {
 
             {/* Mission Statement */}
             <p className="text-sm sm:text-sm md:text-base leading-relaxed text-white font-light max-w-xl relative z-10">
-              Empowering rural communities through transformative educational and social initiatives across East and Northeast India. We are dedicated to bringing hope, opportunity, and sustainable development to underserved regions through comprehensive community development, creating lasting change for thousands of families.
+             Through transformative education and community-driven initiatives, we empower rural communities across East and Northeast India, unlocking opportunities, strengthening resilience, and building a future of sustainable growth and lasting impact.
             </p>
             
             {/* Call-to-Action Buttons */}
