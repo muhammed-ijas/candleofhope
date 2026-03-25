@@ -106,7 +106,7 @@ function Vision() {
           {/* Main Heading */}
           <div className="space-y-4 mb-8">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white drop-shadow-2xl">
-              Vision 2030
+              Mission 2030
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-red-400 via-orange-300 to-orange-400 rounded-full mx-auto"></div>
           </div>
